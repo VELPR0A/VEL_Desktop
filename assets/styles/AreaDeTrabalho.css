@@ -1,0 +1,116 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Biryani:wght@200;300;400;600;700;800;900&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Biryani", Arial, Helvetica, sans-serif;
+}
+
+body{
+    height: 100vh;
+    background-color: var(--corQuaternaria);
+}
+
+:root{
+    --corPrincipal:#005A8D;
+    --corSegundaria:#F38342;
+    --corTerciaria: #C6D8DB;
+    --corQuaternaria: #ECF3FB;
+    --corFonte1: #222222;
+    --corFonte2: #45425F;
+}
+
+nav{
+    color: #fff;
+    background-color: var(--corPrincipal);
+    width: 24%;
+}
+
+nav button{
+    position: relative;
+    left: 93%;
+    top: 85px;
+    width: 30px; 
+    height: 30px; 
+    color: #000;
+    border: 0;
+    box-shadow: 2px 2px 3px #0000005b;
+}
+
+nav ul{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0;
+    margin: auto;
+    text-align: left;
+    list-style: none;
+}
+
+nav a{
+    padding: 10px 25px;
+    color: #fff;
+    font-size: 1.25em;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+nav a > img{
+    width: 1.25em;
+    margin-right: 15px;
+}
+
+main{
+    width: 75%;
+}
+
+main header h1{
+    padding: 35px;
+    font-weight: 800;
+}
+
+#botoes .card{
+    text-align: center;
+    height: 150px;
+    margin-bottom: 50px !important;
+}
+
+#botoes .card-text{
+    position: relative;
+    top: 15px;
+    font-size: 2.7em !important;
+}
+
+#botoes .card a{
+    position: relative;
+    left: 55%;
+    width: 50px; 
+    height: 50px;
+    color: var(--corSegundaria); 
+    font-weight: 100;
+    background-color: #fff;
+    font-size: 1.9em;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#botoes .card a:hover{
+    transition: all 0.1s ease-in;
+    border: 1px solid var(--corPrincipal);
+    transform: scale(1.1);
+}
+
+#botoes .card:nth-child(odd){
+    background-color: var(--corTerciaria);
+}
+
+#botoes .card:nth-child(even){
+    color: #fff;
+    background-color: var(--corSegundaria);
+}
