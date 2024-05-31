@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Biryani:wght@200;300;400;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 :root{
+    --color1: #CADBDE;
     --color2: #F38342;
     --color3: #ECF3FB;
 }
@@ -10,9 +11,11 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: "Roboto";
 }
 
 body{ 
+    min-height: 100vh;
     background-color: var(--color3); 
 }
 
@@ -27,9 +30,221 @@ nav{
 main{
     display: flex;
     justify-content: space-around;
+    flex-direction: column;
+    margin: 10px;
 }
 
 form h2{
+    width: 100%;
     font-size: 2em;
     font-family: "Biryani";
+}
+
+form > div{
+    width: 100%;
+}
+
+form > div > div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+form > div > div > div{
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+form > div > div:last-of-type > div{
+    width: 100%;
+}
+
+form > div > div:last-of-type > div div{
+    display: flex;
+}
+
+form > div > div:last-of-type > div div input[type=button]{
+    width: 40%;
+    max-width: 150px;
+    margin-left: 10px;
+    color: #fff;
+    font-size: 0.9em;
+    background-color: var(--color2);
+}
+
+form div input{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0px;
+    background-color: var(--color3);
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+form svg{
+    font-size: 1.5em;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+section{
+    text-align: center;
+}
+
+section h2{
+    font-size: 24px;
+    text-align: left;
+}
+
+section > div{
+    display: inline-block;
+    background-color: var(--color1);
+    padding: 20px;
+    width: 200px;
+    margin: 10px;
+    text-align: left;
+    border-radius: 5px;
+}
+
+section > div svg{
+    font-size: 1.4em;
+    color: var(--color2);
+}
+
+section > div h3{
+    margin: 10px 0;
+    color: #333333;
+    font-weight: 500;
+    font-size: 1em;
+}
+
+section > div p{
+    color: #222222;
+    font-size: 0.9em;
+}
+
+aside h2{
+    font-family: "Biryani", sans-serif;
+    font-size: 1.5em;
+}
+
+aside > p:first-of-type{
+    font-size: 1em;
+    border-bottom: 3px solid #082D3D;
+}
+
+aside > p:first-of-type span:last-of-type{
+    float: right;
+}
+
+aside > p:last-of-type{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3em;
+    margin: 20px 0;
+}
+
+aside > p:last-of-type span:last-of-type strong{
+    font-size: 1.4em;
+}
+
+aside > div{
+    text-align: center;
+}
+aside > div > div{
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+    text-align: left;
+    background-color: #E8E8E8;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+aside > div > div h4{
+    font-size: 2em;
+}
+
+aside > div > div ul{
+    list-style-type: none;
+    margin: 15px 0;
+}
+
+aside > div > div li{
+    margin: 10px 0;
+}
+
+aside > div > div li svg{
+    color: var(--color2);
+}
+
+aside > div > button{
+    background-color: var(--color2);
+    margin: 20px 0;
+    padding: 15px;
+    width: 100%;
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #fff;
+    border: 0px;
+    border-radius: 5px;
+}
+
+footer{
+    padding: 10px;
+}
+
+footer > p{
+    display: flex;
+    margin: 20px 0;
+}
+
+footer > p svg{
+    font-size: 1.2em;
+    margin: 0 5px;
+}
+
+@media screen and (min-width: 1000px) {
+    body{
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+    }
+    
+    nav{
+        position: absolute;
+        top: 0;
+    }
+
+    main{
+        flex-direction: row;
+        width: 98vw;
+        justify-content: space-around;
+    }
+
+    main article{
+        padding: 20px;
+        max-width: 1000px;
+    }
+
+    main form > div{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    section h2{
+        margin: 30px 0 !important;
+    }
+
+    form > div > div:last-of-type input[type=text]{
+        max-width: 460px;
+    }
+
+    main aside{
+        max-width: 500px;
+    }
 }
