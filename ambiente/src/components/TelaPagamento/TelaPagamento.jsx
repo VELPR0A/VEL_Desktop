@@ -6,11 +6,11 @@ import { CiDiscount1 } from "react-icons/ci";
 export default function TelaPagamento(){
     const CartaoPagamento = ({icone, titulo, texto}) => {
       return(
-            <div>
+            <button>
                 {icone}
                 <h3>{titulo}</h3>
                 <p>{texto}</p>
-            </div>
+            </button>
       );
     };
 
@@ -60,7 +60,7 @@ export default function TelaPagamento(){
                     </form>
                     <section>
                         <h2>Como será o pagamento ?</h2>
-                        <CartaoPagamento icone={<FaCreditCard />} titulo="Cartão de Crédito" texto="até 12x" />
+                        <CartaoPagamento icone={<FaCreditCard />} titulo="Cartão de Crédito" texto="até 12x"/>
                         <CartaoPagamento icone={<FaPaypal />} titulo="PayPal" texto="até 12x" />
                         <CartaoPagamento icone={<FaPix />} titulo="Pix" texto="à vista" />
                         <CartaoPagamento icone={<FaCreditCard />} titulo="Cartão de Débito" texto="à vista" />

@@ -98,29 +98,30 @@ section h2{
     text-align: left;
 }
 
-section > div{
+section > button{
     display: inline-block;
     background-color: var(--color1);
     padding: 20px;
     width: 200px;
     margin: 10px;
     text-align: left;
+    border: 0;
     border-radius: 5px;
 }
 
-section > div svg{
+section > button svg{
     font-size: 1.4em;
     color: var(--color2);
 }
 
-section > div h3{
+section > button h3{
     margin: 10px 0;
     color: #333333;
     font-weight: 500;
     font-size: 1em;
 }
 
-section > div p{
+section > button p{
     color: #222222;
     font-size: 0.9em;
 }

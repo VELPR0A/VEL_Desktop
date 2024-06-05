@@ -1,9 +1,8 @@
-import TelaPagamento from "./components/TelaPagamento/TelaPagamento"
-
 function App() {
   return (
     <>
-      <TelaPagamento />
+    <h1>Tela inicial</h1>
+      <a href="../pages/paginaPagamento.html">Tela De pagamento aqui</a>
     </>
   )
 }
