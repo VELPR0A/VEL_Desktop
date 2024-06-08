@@ -6,8 +6,10 @@ function App() {
       <a href="../pages/paginaPagamento.html">Tela De pagamento aqui</a>
       <br />
       <a href="../pages/paginaTeste.html">Tela teste aqui!</a>
+      <br />
+      <a href="../pages/dashboard.html">Dashboard</a>
     </>
   )
 }
 
-export default App
+export default App;

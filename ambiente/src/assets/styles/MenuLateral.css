@@ -1,0 +1,170 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Biryani:wght@200;300;400;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    --color1: #CADBDE;
+    --color2: #F38342;
+    --color3: #ECF3FB;
+    --color4: #005A8D;
+    --color5: #087DBF;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Biryani";
+}
+
+.laranja{color: var(--color2);}
+
+.MenuLateral{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    max-width: 350px;
+    height: 100vh;
+    color: #fff;
+    background-color: var(--color4);
+    background-image: linear-gradient( to bottom, var(--color4), var(--color5));
+}
+
+.MenuLateral h1{
+    text-align: center;
+    font-size: 2em;
+    padding: 30px 15px;
+}
+
+.MenuLateral .ToggleButton{
+    position: relative;
+    display: block;
+    width: 100%;
+    left: 90%;
+    transition: all 0.5s;
+}
+
+.MenuLateral .ToggleButton img{
+    cursor: pointer;
+}
+
+.MenuLateral main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.MenuLateral main .logoEmpresa{
+    width: 100%;
+    text-align: center;
+    margin: 30px;
+}
+
+.logoEmpresa div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imgEmpresa{
+    width: 100%;
+    max-width: 100px;
+}
+
+.logoEmpresa div::after{
+    content: "";
+    display: block;
+    position: relative;
+    top: -25px;
+    left: 30px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #f00;
+    background-image: radial-gradient(#EF0606, #B00101);
+}
+
+.nomeEmpresa{
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.MenuLateral ul{
+    list-style: none;
+}
+
+.MenuLateral ul li{
+    margin-bottom: 30px;
+}
+
+.MenuLateral ul li a{
+    display: flex;
+    align-items: center;
+}
+
+.MenuLateral ul li a img{
+    width: 30px;
+    margin-right: 10px;
+}
+
+.MenuLateral ul li:nth-child(4) a img{
+    width: 20px;
+}
+
+.pageSelected{
+    font-weight: 700;
+}
+
+.pageSelected::before{
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 15px;
+    height: 50px;
+    margin: -10px 0px 0px 0px;
+    background-color: #32B5FF;
+    animation: breath 1.5s infinite alternate-reverse;
+}
+
+.MenuLateral ul a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+footer{ 
+    position: absolute;
+    bottom: 0;
+    margin-top: 50px;
+}
+
+footer h2{
+    margin-bottom: 20px;
+}
+
+@keyframes breath{
+    from{
+        background-color: #32B5FF;
+    }
+    
+    to{
+        background-color: #32b4ff30;
+    }
+}
+
+.desaparecer{
+    transition: all .5s;
+    opacity: 0;
+}
+
+.shrinkedAside{
+    transition: all 1s;
+    width: 50px !important;
+}
+
+.flip{
+    transform: rotateY(175deg);
+}
