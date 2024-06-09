@@ -12,20 +12,33 @@ import iconeMenu from "../../assets/images/icons/Menu.png";
 export default function MenuLateral({pagina}){
     function toggleMenu(event){
         const toggler = event.target;
-        const elementos = [document.querySelector("header"), document.querySelector("main"), document.querySelector("footer")];
+        const elementos = [document.querySelector("header"), document.querySelector("main .logoEmpresa h2"), document.querySelector("footer > h2")];
+        const spaName = document.querySelectorAll(".spanName");
         const aside = document.querySelector(".MenuLateral");
         const ToggleButton = document.querySelector(".ToggleButton");
+        const listas = document.querySelectorAll(".MenuLateral ul li");
 
         if(toggler.classList.contains("flip")){
             toggler.classList.remove("flip");
             elementos.map(elemento => elemento.classList.remove("desaparecer"));
+            for(let c = 0; c <= spaName.length - 1; c++){
+                spaName[c].classList.remove("desaparecer");
+            }
             aside.classList.remove("shrinkedAside");
             ToggleButton.style.left = "90%";
+            for(let c = 0; c <= listas.length - 1; c++) {
+                listas[c].style.left = "unset";
+            }
         } else {
             toggler.classList.add("flip");
             elementos.map(elemento => elemento.classList.add("desaparecer"));
+            for(let c = 0; c <= spaName.length - 1; c++) spaName[c].classList.add("desaparecer");
             aside.classList.add("shrinkedAside");
-            ToggleButton.style.left = "30%";
+            ToggleButton.style.left = "80%";
+            console.log(listas.length)
+            for(let c = 0; c <= listas.length - 1; c++){
+                listas[c].style.left = "40%";
+            }
         }
     }
 
@@ -45,32 +58,38 @@ export default function MenuLateral({pagina}){
                 <ul>
                     <li className={selecionado("Dashboard")}>
                         <a href="#" >
-                            <img src={iconeDashboard} alt="Icone de Dashboard" /> Dashboard
+                            <img src={iconeDashboard} alt="Icone de Dashboard" />
+                            <span className="spanName">Dashboard</span>
                         </a>
                     </li>
                     <li className={selecionado("Pagamentos")}>
                         <a href="#">
-                            <img src={iconePagamentos} alt="Icone de pagamento" />Pagamentos
+                            <img src={iconePagamentos} alt="Icone de pagamento" />
+                            <span className="spanName">Pagamentos</span>
                         </a>
                     </li>
                     <li className={selecionado("Entregadores")}>
                         <a href="#">
-                            <img src={iconeEntregadores} alt="Icone de entregador" />Entregadores
+                            <img src={iconeEntregadores} alt="Icone de entregador" />
+                            <span className="spanName">Entregadores</span>
                         </a>
                     </li>
                     <li className={selecionado("Faturamento")}>
                         <a href="#">
-                            <img src={iconeFaturamento} alt="Icone de faturamento" />Faturamento
+                            <img src={iconeFaturamento} alt="Icone de faturamento" />
+                            <span className="spanName">Faturamento</span>
                         </a>
                     </li>
                     <li className={selecionado("Contrato")}>
                         <a href="#">
-                            <img src={iconeContrato} alt="Icone de contrato" />Contrato
+                            <img src={iconeContrato} alt="Icone de contrato" />
+                            <span className="spanName">Contrato</span>
                         </a>
                     </li>
                     <li className={selecionado("Coordenadores")}>
                         <a href="#">
-                            <img src={iconeCoordenadores} alt="Icone de coordenador" />Coordenadores
+                            <img src={iconeCoordenadores} alt="Icone de coordenador" />
+                            <span className="spanName">Coordenadores</span>
                         </a>
                     </li>
                 </ul>
@@ -80,7 +99,8 @@ export default function MenuLateral({pagina}){
                 <ul>
                     <li className={selecionado("Configuração")}>
                         <a href="#">
-                            <img src={iconeConfiguração} alt="Icone de Configuração" /> Configuração
+                            <img src={iconeConfiguração} alt="Icone de Configuração" /> 
+                            <span className="spanName">Configuração</span>
                         </a>
                     </li>
                 </ul>

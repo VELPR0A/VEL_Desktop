@@ -22,6 +22,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     width: 30%;
     max-width: 350px;
     height: 100vh;
@@ -33,7 +34,7 @@
 .MenuLateral h1{
     text-align: center;
     font-size: 2em;
-    padding: 30px 15px;
+    margin-top: 10px;
 }
 
 .MenuLateral .ToggleButton{
@@ -58,7 +59,6 @@
 .MenuLateral main .logoEmpresa{
     width: 100%;
     text-align: center;
-    margin: 30px;
 }
 
 .logoEmpresa div{
@@ -88,6 +88,7 @@
 .nomeEmpresa{
     font-size: 1.4em;
     font-weight: 600;
+    margin-bottom: 10px;
 }
 
 .MenuLateral ul{
@@ -96,6 +97,7 @@
 
 .MenuLateral ul li{
     margin-bottom: 30px;
+    position: relative;
 }
 
 .MenuLateral ul li a{
@@ -120,7 +122,7 @@
     content: "";
     display: block;
     position: absolute;
-    left: 0;
+    left: -40%;
     width: 15px;
     height: 50px;
     margin: -10px 0px 0px 0px;
@@ -133,12 +135,6 @@
     text-decoration: none;
     font-size: 1.2em;
     font-weight: 400;
-}
-
-footer{ 
-    position: absolute;
-    bottom: 0;
-    margin-top: 50px;
 }
 
 footer h2{
@@ -157,12 +153,12 @@ footer h2{
 
 .desaparecer{
     transition: all .5s;
-    opacity: 0;
+    opacity: 0 !important;
 }
 
 .shrinkedAside{
     transition: all 1s;
-    width: 50px !important;
+    width: 170px !important;
 }
 
 .flip{
