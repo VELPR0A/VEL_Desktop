@@ -7,6 +7,7 @@
     --color3: #ECF3FB;
     --color4: #005A8D;
     --color5: #087DBF;
+    --color6: #222222;
 }
 
 *{
@@ -78,11 +79,11 @@
     position: relative;
     top: -25px;
     left: 30px;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    background-color: #f00;
-    background-image: radial-gradient(#EF0606, #B00101);
+    background-color: #6BDACC;
+    background-image: radial-gradient(#6BDACC, #4bb1a4);
 }
 
 .nomeEmpresa{

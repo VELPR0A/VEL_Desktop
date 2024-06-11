@@ -1,9 +1,9 @@
-import HelloWorld from "../../components/PaginaTeste/HelloWorld.jsx"
+import TelaCoordenador from "../../components/TelaCoordenador/index"
 
 function App() {
   return (
     <>
-      <HelloWorld />
+      <TelaCoordenador />
     </>
   )
 }
