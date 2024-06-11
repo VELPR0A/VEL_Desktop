@@ -57,7 +57,7 @@ export default function MenuLateral({pagina}){
                 </div>
                 <ul>
                     <li className={selecionado("Dashboard")}>
-                        <a href="#" >
+                        <a href="/pages/dashboard.html" >
                             <img src={iconeDashboard} alt="Icone de Dashboard" />
                             <span className="spanName">Dashboard</span>
                         </a>
@@ -75,7 +75,7 @@ export default function MenuLateral({pagina}){
                         </a>
                     </li>
                     <li className={selecionado("Faturamento")}>
-                        <a href="#">
+                        <a href="/pages/faturamento.html">
                             <img src={iconeFaturamento} alt="Icone de faturamento" />
                             <span className="spanName">Faturamento</span>
                         </a>
@@ -87,7 +87,7 @@ export default function MenuLateral({pagina}){
                         </a>
                     </li>
                     <li className={selecionado("Coordenadores")}>
-                        <a href="#">
+                        <a href="/pages/telaCoordenador.html">
                             <img src={iconeCoordenadores} alt="Icone de coordenador" />
                             <span className="spanName">Coordenadores</span>
                         </a>
