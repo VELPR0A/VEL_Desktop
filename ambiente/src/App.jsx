@@ -18,6 +18,14 @@ function App() {
       <a href="../pages/paginaPerfilEmpresa.html">Perfil da Empresa</a>
       <br />
       <a href="../pages/paginaEditarPerfilEmpresa.html">Editar Perfil da Empresa</a>
+      <br/>
+      <a href="../pages/paginaLogin.html">Login</a>
+      <br/>
+      <a href="../pages/recuperarSenha.html">Recuperar Senha</a>
+      <br/>
+      <a href="../pages/recuperarSenha2.html">Recuperar Senha código</a>
+      <br/>
+      <a href="../pages/paginaInicial.html">Tela inicial</a>
     </>
   )
 }
