@@ -31,6 +31,7 @@
 .login-form{
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: unset;
     flex: 1;
 }
@@ -253,3 +254,10 @@ button {
  input:checked + .slider:before {
   transform: translateX(1.5em);
  }
+
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
