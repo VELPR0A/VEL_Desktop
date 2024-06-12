@@ -1,9 +1,9 @@
-import TelaPagamento from "../../components/TelaPagamento/TelaPagamento.jsx"
+import TelaPagamento from "../../components/TelaPagamento/TelaPagamento.jsx";
 
 function AppPaginaPagamento() {
   return (
     <>
-      <TelaPagamento />
+      <TelaPagamento valorPlano={localStorage.getItem("Plano")} />
     </>
   )
 }

@@ -44,6 +44,8 @@ export default function MenuLateral({pagina}){
 
     const selecionado = link => pagina === link ? "pageSelected" : "";
 
+    const redirecionarPagina = () => window.location = "/pages/paginaPerfilEmpresa.html";
+
     return(
         <aside className="MenuLateral">
             <header>
@@ -52,7 +54,7 @@ export default function MenuLateral({pagina}){
             <div className="ToggleButton"><img src={iconeMenu} alt="Menu para fechar menu lateral" onClick={toggleMenu} /></div>
             <main>
                 <div className="logoEmpresa">
-                    <div><img src={image} alt="Logo de usuário" className="imgEmpresa" /></div>
+                    <div><img src={image} alt="Logo de usuário" className="imgEmpresa" onClick={redirecionarPagina} /></div>
                     <h2 className="nomeEmpresa">Nome Empresa</h2>
                 </div>
                 <ul>
@@ -63,13 +65,13 @@ export default function MenuLateral({pagina}){
                         </a>
                     </li>
                     <li className={selecionado("Pagamentos")}>
-                        <a href="#">
+                        <a href="/pages/dashboard.html">
                             <img src={iconePagamentos} alt="Icone de pagamento" />
                             <span className="spanName">Pagamentos</span>
                         </a>
                     </li>
                     <li className={selecionado("Entregadores")}>
-                        <a href="#">
+                        <a href="/pages/paginaContratosEntregador.html">
                             <img src={iconeEntregadores} alt="Icone de entregador" />
                             <span className="spanName">Entregadores</span>
                         </a>
@@ -81,7 +83,7 @@ export default function MenuLateral({pagina}){
                         </a>
                     </li>
                     <li className={selecionado("Contrato")}>
-                        <a href="#">
+                        <a href="/pages/paginaContratosEmpresa.html">
                             <img src={iconeContrato} alt="Icone de contrato" />
                             <span className="spanName">Contrato</span>
                         </a>
@@ -98,7 +100,7 @@ export default function MenuLateral({pagina}){
                 <h2>Suporte</h2>
                 <ul>
                     <li className={selecionado("Configuração")}>
-                        <a href="#">
+                        <a href="/pages/paginaConfiguracoes.html">
                             <img src={iconeConfiguração} alt="Icone de Configuração" /> 
                             <span className="spanName">Configuração</span>
                         </a>

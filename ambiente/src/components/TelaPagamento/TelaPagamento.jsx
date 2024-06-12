@@ -3,7 +3,7 @@ import { FaCreditCard, FaPaypal, FaPix } from "react-icons/fa6";
 import { FaCheckCircle, FaCheck } from "react-icons/fa";
 import { CiDiscount1 } from "react-icons/ci";
 
-export default function TelaPagamento(){
+export default function TelaPagamento({valorPlano}){
     const CartaoPagamento = ({icone, titulo, texto}) => {
       return(
             <button>
@@ -13,6 +13,10 @@ export default function TelaPagamento(){
             </button>
       );
     };
+
+    const mudarPagina = () => {
+        window.location = "/pages/paginaLogin.html";
+    }
 
     return(
         <>
@@ -74,8 +78,8 @@ export default function TelaPagamento(){
                 </article>
                 <aside>
                     <h2>Resumo</h2>
-                    <p><span>Subtotal</span> <span>R$ 0/mês</span></p>
-                    <p><span>TOTAL</span> <span><strong>R$ 0</strong> <br /> em 12x de R$ 0</span></p>
+                    <p><span>Subtotal</span> <span>R$ {valorPlano}/mês</span></p>
+                    <p><span>TOTAL</span> <span><strong>R$ {valorPlano}</strong> <br /> em 12x de R$ {(valorPlano/12).toFixed(2)}</span></p>
                     <div>
                         <div>
                             <h4>TRANSFORME</h4>
@@ -84,7 +88,7 @@ export default function TelaPagamento(){
                                 <li><FaCheck /> Cadastro ilimitado de entregadores</li>
                             </ul>
                         </div>
-                        <button>CONFIRMAR PAGAMENTO</button>
+                        <button onClick={mudarPagina}>CONFIRMAR PAGAMENTO</button>
                         <p>
                             Ao preencher o formulário você permite que a Virtual Easy Log salve suas informações.
                         </p>

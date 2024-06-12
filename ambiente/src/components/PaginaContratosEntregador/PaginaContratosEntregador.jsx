@@ -11,14 +11,14 @@ export default function PaginaContratosEmpresa(){
             <MenuLateral />
                 <section className="Container">
                     <div className="titulo">
-                        <h1>Contratos</h1>
+                        <h1>Entregadores</h1>
                     </div>
                     <div className="Quadro">
                         <div className="Superior">
                             <h2>Meus Contratos</h2>
                             <button className="Botao-NovoContrato">
                                 <ImPlus />
-                                <p>Novo Contrato</p>
+                                <p>Novo Cadastro</p>
                             </button>
                         </div>
                         <div className="Botoes">

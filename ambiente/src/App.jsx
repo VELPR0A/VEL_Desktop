@@ -3,7 +3,7 @@ function App() {
     <>
       <h1>Tela inicial</h1>
 
-      <a href="../pages/paginaPagamento.html">Tela De pagamento aqui</a>
+      {/* <a href="../pages/paginaPagamento.html">Tela De pagamento aqui</a>
       <br />
       <a href="../pages/telaCoordenador.html">Tela coordenador aqui!</a>
       <br />
@@ -24,7 +24,7 @@ function App() {
       <a href="../pages/recuperarSenha.html">Recuperar Senha</a>
       <br/>
       <a href="../pages/recuperarSenha2.html">Recuperar Senha código</a>
-      <br/>
+      <br/> */}
       <a href="../pages/paginaInicial.html">Tela inicial</a>
     </>
   )

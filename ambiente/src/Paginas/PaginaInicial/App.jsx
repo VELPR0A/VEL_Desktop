@@ -1,7 +1,20 @@
 import React from 'react';
 import './paginaInicial.css';
+import CelularImg from "../../assets/images/Celular.png";
+import ProfileImg from "../../assets/images/Perfil.png";
+import { FaStar } from "react-icons/fa";
 
 function PaginaInicial() {
+  const scrollWin = () => window.scrollTo(0, 3400);
+
+  const enviarPlano = event => {
+    const element = event.target;
+    let planos = 0;
+    element.classList[1] == 1 ? planos = 119.90 : element.classList[1] == 2 ? planos = 219.90 : element.classList[1] == 3 ? planos = 269.90 : planos = 539.90;
+    localStorage.setItem("Plano", planos)
+    
+    window.location = "/pages/paginaPagamento.html";
+  };
 
   return (
    <div className="container">
@@ -9,26 +22,34 @@ function PaginaInicial() {
                 <nav>
                     <div className="logo"></div>
                     <ul className="ul">
-                        <li><a href="#">Home</a></li>
                         <li><a href="#">Sobre</a></li>
-                        <li><a href="#">Nossos Planos</a></li>
+                        <li className='pointer' onClick={scrollWin}>
+                          <a>Nossos Planos</a>
+                          </li>
                         <li><a href="../../../pages/paginaLogin.html"><button className='Login'>Login</button></a></li>
-                        <button className='Cadastro'>Começe Agora<div className="arrow-wrapper"> <div className="arrow"></div></div></button>
+                        
+                        <button className='Cadastro' onClick={scrollWin} >
+                          Começe Agora
+                          <div className="arrow-wrapper"> <div className="arrow"></div>
+                          </div>
+                        </button>
                     </ul>
                 </nav>
             </div>
 
               <div className='Video'>
                 <div className='conteudo'>
-                  <h1>Simplificando a gestão <br></br> de entregas para você</h1>
-                  <h2>Descubra o segredo para entregas mais <br></br> eficientes e lucrativas!</h2>
-                  <a href="#"><button className='torneProdutividade'>Torne sua produtividade 3X maior</button></a>
+                  <h1>Simplificando a gestão <br /> de entregas para você</h1>
+                  <h2>
+                    Descubra o segredo para entregas mais 
+                    <br /> 
+                    eficientes e lucrativas!
+                  </h2>
+                  <button onClick={scrollWin} className='torneProdutividade'>
+                      Torne sua produtividade 3X maior
+                  </button>
                 </div>
               </div>
-              
-
-              
-            
 
             <div className='Frase'>
               <h1>DIGA  ADEUS AS COMANDAS DE PAPEL!</h1>
@@ -41,7 +62,7 @@ function PaginaInicial() {
 
                 <div className='um'>
 
-                  <div className='imgNotebook'></div>
+                  <img src={CelularImg} alt="Celular" className='imgNotebook' />
 
                   <div className='dois'>
                     <h2>A Solução Completa para <span className="highlight">Restaurantes</span> e <br></br> <span className="highlight">Empresas de Motoboys</span></h2>
@@ -58,7 +79,7 @@ function PaginaInicial() {
 
                 </div>
             </div>
-
+            
             <div className='Funcionalidades'>
               <h1>Temos como Funcionalidades</h1>
 
@@ -85,6 +106,25 @@ function PaginaInicial() {
               </div>
             </div>
 
+            <div id='avaliacoes'>
+              <div className="avaliacao">
+                <p>“Wallet is a great product! All of my most important information is there - credit cards, transit cards, boarding passes, tickets, and more. And I don't need to worry because it's all in one place! thanks!”</p>
+                <div>
+                  <img src={ProfileImg} alt="Imagem de perfil" />
+                  <div>
+                    <span>Johny Ownes</span>
+                    <span>
+                      <FaStar className='starW' />
+                      <FaStar className='starW' />
+                      <FaStar className='starW' />
+                      <FaStar className='starW' />
+                      <FaStar className='starB' />
+                    </span>
+                  </div>
+                  </div>
+              </div>
+            </div>
+
             <div className='NossosPlanos'>
 
               <h1>Temos o plano perfeito para sua empresa!</h1>
@@ -97,7 +137,7 @@ function PaginaInicial() {
                   <p className='conteudoPlano'> Acesso a toda nossa plataforma e cadastre até 10 entregadores</p>
                   <p className="precoVelho">R$ 149,90</p>
                   <p className="precoNovo">R$ 119,90/mês</p>
-                  <button className="buttonCard">Comece grátis</button>
+                  <button onClick={enviarPlano} className="buttonCard 1">Comece grátis</button>
                 </div>
 
                 <div className='Desperte'>
@@ -105,7 +145,7 @@ function PaginaInicial() {
                   <p className='conteudoPlano'> Acesso a toda nossa plataforma e cadastre até 30 entregadores</p>
                   <p className="precoVelho">R$ 279,90</p>
                   <p className="precoNovo">R$ 219,90/mês</p>
-                  <button className="buttonCard">Comece grátis</button>
+                  <button onClick={enviarPlano} className="buttonCard 2">Comece grátis</button>
                 </div>
 
                 <div className='Desperte'>
@@ -113,7 +153,7 @@ function PaginaInicial() {
                   <p className='conteudoPlano'> Acesso a toda nossa plataforma e cadastre até 60 entregadores</p>
                   <p className="precoVelho">R$ 339,90</p>
                   <p className="precoNovo">R$ 269,90/mês</p>
-                  <button className="buttonCard">Comece grátis</button>
+                  <button onClick={enviarPlano} className="buttonCard 3">Comece grátis</button>
                 </div>
 
                 <div className='Desperte'>
@@ -121,7 +161,7 @@ function PaginaInicial() {
                   <p className='conteudoPlano'> Acesso a toda nossa plataforma e cadastro ilimitado de entregadores </p>
                   <p className="precoVelho">R$ 669,90</p>
                   <p className="precoNovo">R$ 539,90/mês</p>
-                  <button className="buttonCard">Comece grátis</button>
+                  <button onClick={enviarPlano} className="buttonCard 4">Comece grátis</button>
                 </div>
                 </div>
 
@@ -140,9 +180,9 @@ function PaginaInicial() {
       </div>
       <div className="footer-section">
         <h3>Contatos</h3>
-        <p>Instagram: VirtualEasyLog</p>
-        <p>Linkedin: Virtual Easy Log</p>
-        <p>Email: virtualeasylog@gmail.com</p>
+        <p><strong>Instagram:</strong> VirtualEasyLog</p>
+        <p><strong>Linkedin</strong>: Virtual Easy Log</p>
+        <p><strong>Email:</strong> virtualeasylog@gmail.com</p>
       </div>
     </footer>
 

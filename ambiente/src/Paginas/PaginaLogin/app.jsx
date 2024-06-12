@@ -2,6 +2,12 @@ import React from 'react';
 import './Login.css';  // Importa o CSS
 
 function Login() {
+  const verificaLogin = e => {
+    e.preventDefault()
+    
+    window.location = "/pages/dashboard.html";
+}
+
   return (
     <div className="container">
       <div className='imagem-fundo'></div>
@@ -28,7 +34,7 @@ function Login() {
             <label className='remember' htmlFor="remember">Me lembre</label>
             <a href="../../../pages/recuperarSenha.html">Esqueceu sua senha?</a>
           </div>
-          <button type="submit">Entrar</button>
+          <input type="submit" onClick={verificaLogin} value="Entrar" />
         </form>
         <div className='Continuar-google'>
           <button className="button">
