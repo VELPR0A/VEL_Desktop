@@ -11,7 +11,7 @@ export default function PaginaContratosEmpresa(){
             <MenuLateral />
                 <section className="Container">
                     <div className="titulo">
-                        <h1>Entregadores</h1>
+                        <h1>Contratos</h1>
                     </div>
                     <div className="Quadro">
                         <div className="Superior">

@@ -24,9 +24,9 @@ export default function PaginaConfiguracoes(){
                                 </div>
                                 <h2>Modo Escuro</h2>
                             </div>
-                            <div class="toggle-switch">
-                                <input class="toggle-input" id="toggle" type="checkbox" />
-                                <label class="toggle-label" for="toggle"></label>
+                            <div className="toggle-switch">
+                                <input className="toggle-input" id="toggle" type="checkbox" />
+                                <label className="toggle-label" htmlFor="toggle"></label>
                             </div>
                         </div>
                         <div className="Notificacoes">
@@ -36,48 +36,60 @@ export default function PaginaConfiguracoes(){
                                 </div>
                                 <h2>Notificações</h2>
                             </div>
-                            <div class="toggle-switch">
-                                <input class="toggle-input" id="toggle" type="checkbox" />
-                                <label class="toggle-label" for="toggle"></label>
+                            <div className="toggle-switch">
+                                <input className="toggle-input" id="toggle2" type="checkbox" />
+                                <label className="toggle-label" htmlFor="toggle2"></label>
                             </div>
                         </div>
                         <div className="AlterarSenha">
-                            <div className="Icone-titulo">
-                                <div className="Icone">
-                                    <MdOutlinePassword />
+                            <a href="#">
+                                <div className="Icone-titulo">
+                                    <div className="Icone">
+                                        <MdOutlinePassword />
+                                    </div>
+                                    <h2>Alterar Senha</h2>
                                 </div>
-                                <h2>Alterar Senha</h2>
-                            </div>
+                            </a>
                         </div>
                         <div className="Privacidade">
-                            <div className="Icone-titulo">
-                            <div className="Icone"><SlLock /></div>
-                                <h2>Política de Privacidade</h2>
-                            </div>
+                            <a href="#">
+                                <div className="Icone-titulo">
+                                <div className="Icone"><SlLock /></div>
+                                    <h2>Política de Privacidade</h2>
+                                </div>
+                            </a>
                         </div>
                         <div className="Termos">
-                            <div className="Icone-titulo">
-                            <div className="Icone"><IoDocumentTextOutline /></div>
-                                <h2>Termos de Uso</h2>
-                            </div>
+                            <a href="#">
+                                <div className="Icone-titulo">
+                                <div className="Icone"><IoDocumentTextOutline /></div>
+                                    <h2>Termos de Uso</h2>
+                                </div>
+                            </a>
                         </div>
                         <div className="Contato">
-                            <div className="Icone-titulo">
-                            <div className="Icone"><PiPhoneCallLight /></div>
-                                <h2>Contato</h2>
-                            </div>
+                            <a href="#">
+                                <div className="Icone-titulo">
+                                <div className="Icone"><PiPhoneCallLight /></div>
+                                    <h2>Contato</h2>
+                                </div>
+                            </a>
                         </div>
                         <div className="Idioma">
-                            <div className="Icone-titulo">
-                            <div className="Icone"><MdLanguage /></div>
-                                <h2>Idioma</h2>
-                            </div>
+                            <a href="#">
+                                <div className="Icone-titulo">
+                                <div className="Icone"><MdLanguage /></div>
+                                    <h2>Idioma</h2>
+                                </div>
+                            </a>
                         </div>
                         <div className="Sair">
-                            <div className="Icone-titulo">
-                            <div className="Icone"><LuLogOut /></div>
-                                <h2>Sair</h2>
-                            </div>
+                            <a href="/pages/paginaInicial.html">
+                                <div className="Icone-titulo">
+                                <div className="Icone"><LuLogOut /></div>
+                                    <h2>Sair</h2>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </section>

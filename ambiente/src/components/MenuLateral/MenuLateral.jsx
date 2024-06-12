@@ -65,7 +65,7 @@ export default function MenuLateral({pagina}){
                         </a>
                     </li>
                     <li className={selecionado("Pagamentos")}>
-                        <a href="/pages/dashboard.html">
+                        <a href="/pages/pagamentos.html">
                             <img src={iconePagamentos} alt="Icone de pagamento" />
                             <span className="spanName">Pagamentos</span>
                         </a>

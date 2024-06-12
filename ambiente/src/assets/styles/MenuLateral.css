@@ -23,7 +23,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: 350px;
+    width: 290px;
     height: 100vh;
     color: #fff;
     background-color: var(--color4);
@@ -32,7 +32,7 @@
 
 .MenuLateral h1{
     text-align: center;
-    font-size: 2em;
+    font-size: 1.5em;
     margin-top: 10px;
 }
 
@@ -91,11 +91,13 @@
 }
 
 .MenuLateral ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     list-style: none;
 }
 
 .MenuLateral ul li{
-    margin-bottom: 30px;
     position: relative;
 }
 
@@ -121,7 +123,7 @@
     content: "";
     display: block;
     position: absolute;
-    left: -40%;
+    left: -30%;
     width: 15px;
     height: 50px;
     margin: -10px 0px 0px 0px;
@@ -134,10 +136,6 @@
     text-decoration: none;
     font-size: 1.2em;
     font-weight: 400;
-}
-
-footer h2{
-    margin-bottom: 20px;
 }
 
 @keyframes breath{

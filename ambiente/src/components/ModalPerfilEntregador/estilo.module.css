@@ -366,3 +366,9 @@
         outline: 1px solid #c9e2ff;
     }
 }
+
+@media screen and (max-width: 1000px){
+    .modalFormGrupo input {
+        width: 45% !important;
+    }
+}
