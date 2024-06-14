@@ -1,6 +1,6 @@
 import MenuLateral from "../../components/MenuLateral/MenuLateral";
 import "../../assets/styles/pagamentos.css";
-
+import capacete from "../../assets/images/Helmet.png"
 function App() {
     const Header = ({titulo}) => {
         return <h1>{titulo}</h1>;
@@ -13,23 +13,64 @@ function App() {
                 <p>R$ {valor},00</p>
             </div>
         );
-    }
+    };
+
+    const exibirInfo = () => {
+        const Card = document.querySelector("#card");
+        const CardBackground = document.querySelector("#cardBackground");
+
+        if(!Card.classList.contains("ativado")){
+            Card.classList.add("ativado");
+            CardBackground.classList.add("ativado");
+        } else {
+            Card.classList.remove("ativado");
+            CardBackground.classList.remove("ativado");    
+        }
+
+    };
 
     const Registro = ({nome, id, dataPag, valor}) => {
         return (
             <li>
-                <span className="nome">{nome}</span>
-                <span className="id">{id}</span>
-                <span className="dataPag">{dataPag}</span>
-                <span className="valor">R$ {valor},00</span>
+                <span style={{cursor: "pointer"}} className="Nome" onClick={exibirInfo}>{nome}</span>
+                <span className="Id">{id}</span>
+                <span className="DataPag">{dataPag}</span>
+                <span className="Valor">R$ {valor},00</span>
             </li>
         );
     }
 
+    const RegistroEntregador = ({nome, idEntrega, valor, endereco}) => {
+        return (
+            <li>
+                <img src={capacete} alt="Icone capacete" /> 
+                <div>
+                    <h3>Cliente: {nome} <span className="idEntrega">{idEntrega}</span></h3>
+                    <p>{endereco}</p>
+                </div>
+                <p>R$ {valor}</p>
+            </li>
+        );    
+    }
+
     return (
         <>
-            <MenuLateral pagina="Dashboard" />
-            <aside>
+        <div id="cardBackground" className="ativado"></div>
+            <div id="card" className="ativado">
+                <h2>Relatório de Entrega</h2>
+                <div>
+                    <h3>Valor Total</h3>
+                    <p>R$ <span className="valorEntrega">539,00</span></p>
+                </div>
+                <div>
+                    <p>Entregador: <span className="entregador">Jefferoson Souza Silva</span></p>
+                    <p>Data: <span className="date">15/04/2024</span></p>
+                </div>
+                <RegistroEntregador nome="José Ronaldo" idEntrega="#1000" valor="50" endereco="R. dos Pinheiros - Pinheiros, São Paulo - SP, 081142-640" />
+                <button onClick={exibirInfo}>Voltar</button>
+            </div>
+            <MenuLateral pagina="Pagamentos" />
+            <section>
                 <Header titulo="Pagamentos" />
                 <div id="itens">
                     <Bloco titulo="Faturamento Diário" valor="1.230" />
@@ -38,15 +79,14 @@ function App() {
                 </div>
                 <div id="tabela">
                     <header>
-                        <label htmlFor="IData">Abril</label>
                         <input type="month" name="Data" id="IData" />
                     </header>
                     <main>
                         <header>
-                            <h3>Nome</h3>
-                            <h3>ID</h3>
-                            <h3>Data de Pagamento</h3>
-                            <h3>Valor</h3>
+                            <h3 className="Nome">Nome</h3>
+                            <h3 className="Id">ID</h3>
+                            <h3 className="DataPag">Data de Pagamento</h3>
+                            <h3 className="Valor">Valor</h3>
                         </header>
                         <ul>
                             <Registro nome="Jefferoson Souza Silva" id="#0001" dataPag="20/04/2024" valor="530" />
@@ -54,7 +94,7 @@ function App() {
                         </ul>
                     </main>
                 </div>
-            </aside>
+            </section>
         </>
     )
 }

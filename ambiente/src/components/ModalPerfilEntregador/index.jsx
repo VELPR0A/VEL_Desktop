@@ -43,7 +43,7 @@ export default function ModalPerfilEntregador({ isOpen, onClose, entregador }) {
                 </div>
 
                 <h2 className={style.modalPerfilTitulo}>
-                    {estado === 'edit' && ('EDITAR ')}COORDENADOR
+                    {estado === 'edit' && ('EDITAR ')}ENTREGADOR
                 </h2>
 
                 {estado === 'view' ? (

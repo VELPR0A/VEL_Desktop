@@ -71,7 +71,7 @@ export default function MenuLateral({pagina}){
                         </a>
                     </li>
                     <li className={selecionado("Entregadores")}>
-                        <a href="#">
+                        <a href="/pages/telaEntregador.html">
                             <img src={iconeEntregadores} alt="Icone de entregador" />
                             <span className="spanName">Entregadores</span>
                         </a>

@@ -11,7 +11,7 @@ export default function PaginaConfiguracoes(){
     return(
         <>
         <main className="TelaConfiguracoes">
-            <MenuLateral />
+            <MenuLateral pagina="Configuração" />
                 <section className="Container">
                     <div className="titulo">
                         <h1>Configurações</h1>

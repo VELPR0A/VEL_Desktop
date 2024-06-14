@@ -1,10 +1,9 @@
-import MenuLateral from "../../components/MenuLateral/MenuLateral";
+import Faturamento from "../../components/PaginaFaturamento/PaginaFaturamento.jsx";
 
 function App() {
   return (
     <>
-    <MenuLateral pagina="Faturamento" />
-
+      <Faturamento />
     </>
   )
 }

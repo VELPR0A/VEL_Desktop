@@ -3,6 +3,7 @@ import './paginaInicial.css';
 import CelularImg from "../../assets/images/Celular.png";
 import ProfileImg from "../../assets/images/Perfil.png";
 import { FaStar } from "react-icons/fa";
+import English from "../../assets/images/En.png";
 
 function PaginaInicial() {
   const scrollWin = () => window.scrollTo(0, 3400);
@@ -25,6 +26,11 @@ function PaginaInicial() {
                         <li><a href="#">Sobre</a></li>
                         <li className='pointer' onClick={scrollWin}>
                           <a>Nossos Planos</a>
+                          </li>
+                          <li>
+                          <a href="/pages/paginaInicialEn.html" className="idioma">
+                      <img src={English} alt="English Logo" style={{width: "35px"}} />
+                    </a>
                           </li>
                         <li><a href="../../../pages/paginaLogin.html"><button className='Login'>Login</button></a></li>
                         
@@ -108,7 +114,7 @@ function PaginaInicial() {
 
             <div id='avaliacoes'>
               <div className="avaliacao">
-                <p>“Wallet is a great product! All of my most important information is there - credit cards, transit cards, boarding passes, tickets, and more. And I don't need to worry because it's all in one place! thanks!”</p>
+                <p>"Adorei! Agora consigo organizar minhas entregas e entregadores de uma forma muito mais organizada usando a plataforma da Virtual Easy Log! Não me arrependo nem um pouco de ter fechado o contrato."</p>
                 <div>
                   <img src={ProfileImg} alt="Imagem de perfil" />
                   <div>
@@ -127,7 +133,7 @@ function PaginaInicial() {
 
             <div className='NossosPlanos'>
 
-              <h1>Temos o plano perfeito para sua empresa!</h1>
+              <h1>Temos o <span className="blue">plano perfeito</span> para sua <span className="blue">empresa</span>!</h1>
               <p>Comece agora a simplificar a gestão de sua empresa</p>
 
               <div className='TiposPlanos'>

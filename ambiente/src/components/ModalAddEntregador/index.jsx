@@ -12,7 +12,7 @@ export default function ModalAddEntregador({ isOpen, onClose }) {
 
                 <button className={style.modalBotaoFechar} onClick={onClose}>✖</button>
 
-                <h2 className={style.modalPerfilTitulo}>CADASTRAR COORDENADOR</h2>
+                <h2 className={style.modalPerfilTitulo}>CADASTRAR ENTREGADOR</h2>
 
                 <form className={style.modalForm}>
                     <div className={style.modalImagemContainer}>

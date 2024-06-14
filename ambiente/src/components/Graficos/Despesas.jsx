@@ -43,11 +43,11 @@ export default function Despesas(){
         },
         series: [{
             type: 'pie',
-            name: 'Gastos',
+            name: 'Valor',
             innerSize: '50%',
             data: [
-                ['', 75],
-                ['', 25]
+                ['Gastos', 75],
+                ['Última <br> semana', 25]
             ]
         }]
     }

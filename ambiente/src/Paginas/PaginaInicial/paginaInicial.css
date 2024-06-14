@@ -9,6 +9,10 @@
    list-style: none;
 }
 
+.blue{
+  color: #0785D2;
+}
+
 .pointer{cursor: pointer;}
 
  body{

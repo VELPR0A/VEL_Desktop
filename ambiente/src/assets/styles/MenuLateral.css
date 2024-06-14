@@ -113,6 +113,7 @@
 
 .MenuLateral ul li:nth-child(4) a img{
     width: 20px;
+    margin-left: 5px !important;
 }
 
 .pageSelected{
@@ -160,4 +161,8 @@
 
 .flip{
     transform: rotateY(175deg);
+}
+
+footer{
+    margin-bottom: 10px;
 }

@@ -21,7 +21,7 @@
     grid-template-rows: repeat(5, 20%);
     grid-template-columns: repeat(4, 25%);
     background-color: var(--color3);
-    width: 100%;
+    width: 83vw;
     height: 100vh;
     padding: 10px;
 }

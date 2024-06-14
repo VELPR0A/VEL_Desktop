@@ -8,7 +8,7 @@ export default function PaginaContratosEmpresa(){
     return(
         <>
         <main className="TelaContratosEmpresa">
-            <MenuLateral />
+            <MenuLateral pagina="Contrato" />
                 <section className="Container">
                     <div className="titulo">
                         <h1>Contratos</h1>
