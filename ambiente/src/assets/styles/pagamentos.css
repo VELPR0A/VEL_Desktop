@@ -13,7 +13,10 @@
 
 body{background-color: #ECF3FB;}
 
-section{width: 83vw;}
+section{
+    width: 83vw;
+    width: -webkit-fill-available !important;
+}
 
 section > h1{
     width: 80%;
@@ -72,6 +75,13 @@ section #itens div p{
     padding: 10px;
     margin: 40px 0;
     background-color: #F3F6F9;
+    border-radius: 10px;
+}
+
+#tabela input[type="month"]{
+    padding: 10px;
+    color: var(--color5);
+    border: 2px solid var(--color2);
     border-radius: 10px;
 }
 

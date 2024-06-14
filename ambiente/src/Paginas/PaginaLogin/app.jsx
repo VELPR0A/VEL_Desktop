@@ -48,7 +48,7 @@ function Login() {
           </button>
         </div>
         <div className="login-options">
-          <p>Não garantiu seu plano? <a href="/">cadastre-se agora</a></p>
+          <p>Não garantiu seu plano? <a href="/pages/paginaInicial.html">cadastre-se agora</a></p>
         </div>
         </div>
       </div>

@@ -12,6 +12,7 @@ body {
     align-items: center;
     flex-wrap: wrap;
     width: 83vw;
+    width: -webkit-fill-available !important;
     min-height: 100vh;
 }
 

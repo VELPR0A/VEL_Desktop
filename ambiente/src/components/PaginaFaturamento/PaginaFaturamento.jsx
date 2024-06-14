@@ -26,14 +26,9 @@ export default function PaginaFaturamento(){
                         </div>
                     </div>
                     <div className="Quadro">
-                        <div className="Mes-Icone">
-                            <div className="Mes">
-                                <h2>Abril</h2>
-                            </div>
-                            <div className="Icone">
-                                    <IoCalendarOutline />
-                            </div>
-                        </div>
+                        <header>
+                            <input type="month" name="Data" id="IData" />
+                        </header>
                         <div className="Titulo-Tabela">
                         <div className="Nome">
                             <h3>Nome</h3>

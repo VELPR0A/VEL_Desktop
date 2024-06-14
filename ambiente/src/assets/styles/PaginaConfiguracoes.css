@@ -21,6 +21,7 @@ a:hover{
   align-items: center;
   flex-wrap: wrap;
   width: 83vw;
+  width: -webkit-fill-available !important;
   min-height: 100vh;
 }
   
@@ -42,7 +43,8 @@ a:hover{
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
-  width: 100%;
+  width: 90%;
+  border-radius: 10px;
   padding: 2em;
 }
 
