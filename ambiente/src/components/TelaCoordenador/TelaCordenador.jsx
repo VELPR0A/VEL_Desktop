@@ -1,5 +1,5 @@
 import MenuLateral from "../MenuLateral/MenuLateral"
-import HeaderCoordenador from "../HeaderCoordenador/index"
+import Header from "../Header/index"
 import TabelaCoordenador from "../TabelaCoordenador/TabelaCoordenador"
 import style from './estilo.module.css'
 
@@ -8,7 +8,7 @@ export default function TelaCoordenador() {
     <div className={style.conteiner}>
       <MenuLateral pagina="Coordenadores" />
       <div className={style.conteudoPrincipal}>
-        <HeaderCoordenador />
+      <Header titulo="Coordenadores" empresa="Menu Food & Drink"/>
         <TabelaCoordenador />
       </div>
     </div>
