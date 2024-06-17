@@ -1,0 +1,97 @@
+.conteiner {
+    background-color: #ffffff;
+    width: 80%;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 4px 4px 7px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Formatação do form*/
+.modalFormConteiner {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    justify-content: center;
+
+}
+
+.modalFormGrupo {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    flex: 1;
+    gap: 30px;
+    align-items: center;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+.modalFormGrupo label {
+    color: var(--color6);
+    font-family: Biryani;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.modalFormGrupo input,
+.modalFormGrupo select,
+.modalFormGrupo textarea {
+    background: #ECF3FB;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 15px;
+    color: var(--color6);
+    font-family: Biryani;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 18px;
+    width: 100%;
+
+    &:focus {
+        outline: 1px solid #c9e2ff;
+    }
+}
+
+select {
+    cursor: pointer;
+}
+
+textarea {
+    resize: none;
+}
+
+option:disabled {
+    display: none;
+}
+
+.modalBotoes {
+    width: 100%;
+    display: flex;
+    align-self: center;
+    justify-content: flex-end;
+}
+
+.modalBotaoEnviar {
+    padding: 10px;
+    background-color: #005A8D;
+    color: white;
+    font-family: Biryani;
+    font-weight: 700;
+    line-height: 100%;
+    padding: 15px 15px 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: fit-content;
+
+    &:hover {
+        background-color: #056fac;
+    }
+}
