@@ -1,0 +1,27 @@
+.header {
+    background-color: #005A8D;
+    height: 110px;
+    width: 80%;
+    padding: 16px;
+    margin: 50px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 4px 4px 7px 0px rgba(0, 0, 0, 0.25);
+}
+
+.header_title {
+    color: #FFF;
+    text-align: center;
+    font-family: Biryani;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.header_empresa {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 100%;
+}

@@ -59,7 +59,11 @@ export default function MenuLateral({pagina}){
                 </div>
                 <ul>
                     <li className={selecionado("Coordenadores")}>
+<<<<<<< frontEnd
                         <a href="/pages/atribuirEntrega.html">
+=======
+                        <a href="/pages/telaCoordenador.html">
+>>>>>>> frontEnd
                             <img src={iconeCoordenadores} alt="Icone de coordenador" />
                             <span className="spanName">Coordenadores</span>
                         </a>
