@@ -116,7 +116,7 @@ select {
 .Botao-Salvar {
     width: 200px;
     border: 2px solid var(--color4);
-    border-radius: 20px;
+    border-radius: 10px;
     transition: all 0.3s;
     cursor: pointer;
     background: white;
