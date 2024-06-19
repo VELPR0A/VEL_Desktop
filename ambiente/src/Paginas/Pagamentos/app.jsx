@@ -1,7 +1,27 @@
 import MenuLateral from "../../components/MenuLateral/MenuLateral";
 import "../../assets/styles/pagamentos.css";
 import capacete from "../../assets/images/Helmet.png"
+import Http from '../../components/RequisicaoHTTP/Http';
+
 function App() {
+    const informacoes = async date => {
+        try{
+          const user = localStorage.getItem("User");
+          user.data = date;
+          const requisição = await fetch("<URL AQUI>", Http("POST", user));
+          if(response.status >= 200 || response.status <= 399){
+            const informacoes = await requisição.json();
+            console.log(informacoes);
+          } else {
+              throw new Error(`ERROR ${response.status}`);
+          }
+    
+        } catch(error){
+          console.log(error);
+          return alert("Erro na requisição de dados, tente recarregar a página!")
+        }
+    }
+
     const Header = ({titulo}) => {
         return <h1>{titulo}</h1>;
     }

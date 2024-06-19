@@ -6,19 +6,28 @@ function Login() {
   const verificaLogin = e => {
     e.preventDefault()
     const user = {
-      email: document.querySelector("#email").value,
+      email: document.querySelector("#email").value.toLowerCase(),
       password: document.querySelector("#pass").value,
     }
 
-    fetch("/")
-    .then(res => console.log(res.data))
-    .catch(err => console.log(err));
+    if(user.email.length <= 1 || user.password.length <= 1) return alert("Preencha todos os campos!");
 
-    // fetch('http://localhost:3001/', Http('POST', user))
-    // .then(response => console.log(response))
-    // .catch(error => console.log(error))
+    console.log(user, Http("POST", user))
 
-     // window.location = "/pages/dashboard.html";
+    fetch("https://vel-tnpo.onrender.com/login/usuario", Http("POST", user))
+    .then(response => response.text())
+    .then(response => {
+        const resultado = response.data;
+        console.log(response)
+        if(resultado){
+            alert("Login validado com sucesso!");
+            localStorage.setItem("User", JSON.stringify(user));
+            return window.location = "/pages/dashboard.html";
+        } else {
+            return alert("Senha ou login inválidos!")
+        }
+    })
+    .catch(error => alert("Erro ao fazer a requisição!"));
   }
 
   return (

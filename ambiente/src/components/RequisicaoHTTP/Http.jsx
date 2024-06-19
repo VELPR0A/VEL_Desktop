@@ -1,8 +1,8 @@
 export default function Http(Mt, data){
     let option = {
         method: Mt, 
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
+        headers: {"Accept": "application/json", "Content-Type": "application/json"},
     }
 
     return option;

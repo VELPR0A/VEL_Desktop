@@ -5,8 +5,26 @@ import FaturamentoMensal from "../../components/Graficos/FaturamentoMensal";
 import MoneyIcon from "../../assets/images/Money.png";
 import CapaceteIcon from "../../assets/images/Capacete.png";
 import Metas from "../../components/Graficos/Metas";
+import Http from '../../components/RequisicaoHTTP/Http';
 
 function App() {
+  const informacoes = async () => {
+    try{
+      const user = localStorage.getItem("User");
+      const requisição = await fetch("<URL AQUI>", Http("POST", user));
+      if(response.status >= 200 || response.status <= 399){
+        const informacoes = await requisição.json();
+        console.log(informacoes);
+      } else {
+          throw new Error(`ERROR ${response.status}`);
+      }
+
+    } catch(error){
+      console.log(error);
+      return alert("Erro na requisição de dados, tente recarregar a página!")
+    }
+  }
+
   const CartaoFaturamento = ({titulo, divClasse, h2Classe, h4Classe}) => {
     return(
       <div className={divClasse}>

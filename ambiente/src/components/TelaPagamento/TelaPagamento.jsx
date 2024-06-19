@@ -2,6 +2,7 @@ import "../../assets/styles/TelaPagamento.css";
 import { FaCreditCard, FaPaypal, FaPix } from "react-icons/fa6";
 import { FaCheckCircle, FaCheck } from "react-icons/fa";
 import { CiDiscount1 } from "react-icons/ci";
+import Http from '../../components/RequisicaoHTTP/Http';
 
 export default function TelaPagamento({valorPlano}){
     const CartaoPagamento = ({icone, titulo, texto}) => {
@@ -14,8 +15,31 @@ export default function TelaPagamento({valorPlano}){
       );
     };
 
-    const mudarPagina = () => {
-        window.location = "/pages/paginaLogin.html";
+    const validacaoForm = e => {
+        const form = {
+            RazaoSocial: document.querySelector("#IRazaoSocial").value,
+            CNPJ: document.querySelector("#ICNPJ").value,
+            Email: document.querySelector("#IEmail").value,
+            Tel: document.querySelector("#ITelefone").value,
+            Cupom: document.querySelector("#ICupom").value,
+            Valor: valorPlano
+        }
+
+        if(form.RazaoSocial.length <= 1 || form.CNPJ.length <= 1 || form.Email.length <= 1 || form.Tel.length <= 1 || form.Valor.length <= 1) return alert("Preencha todos os campos!");
+
+        fetch("<URL AQUI>", Http("POST", form))
+        .then(response => response.json())
+        .then(response => {
+            const resultado = response.data;
+
+            if(resultado){
+                alert("Pagamento confirmado! Seu comprovante e senha serão enviados por email. ");
+                return window.location = "/pages/paginaLogin.html";
+            } else {
+                return alert("Erro na validação do pagamento!")
+            }
+        })
+        .catch(error => alert("Erro ao fazer a requisição!"))
     }
 
     return(
@@ -25,7 +49,7 @@ export default function TelaPagamento({valorPlano}){
             </nav>
             <main>
                 <article>
-                    <form action="#" method="POST"> {/*Colocar url do Backend*/}
+                    <form target="#">
                         <h2>Complete seu cadastro na <span className="laranja">VEL</span></h2>
                         <div>
                             <div>
@@ -35,18 +59,18 @@ export default function TelaPagamento({valorPlano}){
                                 </div>
                                 <div>
                                     <label htmlFor="ICNPJ">CNPJ</label>
-                                    <input type="number" name="CNPJ" id="ICNPJ" />
+                                    <input required minLength={14} type="number" name="CNPJ" id="ICNPJ" />
                                 </div>
                             </div>
                             
                             <div>
                                 <div>
                                     <label htmlFor="IEmail">Email</label>
-                                    <input type="email" name="Email" id="IEmail" />
+                                    <input autoComplete="on" required type="email" name="Email" id="IEmail" />
                                 </div>
                                 <div>
                                     <label htmlFor="ITelefone">Telefone</label>
-                                    <input type="tel" name="Telefone" id="ITelefone" placeholder="(00) 0 0000-0000" />
+                                    <input  autoComplete="on" required minLength={11} type="tel" name="Telefone" id="ITelefone" placeholder="0 0000-0000" />
                                 </div>
                             </div>
                             <div>
@@ -88,7 +112,7 @@ export default function TelaPagamento({valorPlano}){
                                 <li><FaCheck /> Cadastro ilimitado de entregadores</li>
                             </ul>
                         </div>
-                        <button onClick={mudarPagina}>CONFIRMAR PAGAMENTO</button>
+                        <input type="submit" onClick={validacaoForm} value="CONFIRMAR PAGAMENTO" />
                         <p>
                             Ao preencher o formulário você permite que a Virtual Easy Log salve suas informações.
                         </p>

@@ -6,7 +6,7 @@ import style from './estilo.module.css'
 export default function TelaAtendente() {
   return (
     <div className={style.conteiner}>
-      <MenuLateral pagina="Coordenadores" />
+      <MenuLateral pagina="Atendente" />
       <div className={style.conteudoPrincipal}>
         <Header titulo="Atribuir Pedidos" empresa=""/>
         <FormAtendente />
