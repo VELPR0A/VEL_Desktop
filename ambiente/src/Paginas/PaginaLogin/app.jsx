@@ -4,30 +4,33 @@ import Http from '../../components/RequisicaoHTTP/Http';
 
 function Login() {
   const verificaLogin = e => {
-    e.preventDefault()
+    e.preventDefault();
+
     const user = {
       email: document.querySelector("#email").value.toLowerCase(),
-      password: document.querySelector("#pass").value,
+      senha: document.querySelector("#senha").value,
     }
 
-    if(user.email.length <= 1 || user.password.length <= 1) return alert("Preencha todos os campos!");
+    if(user.email.length <= 1 || user.senha.length <= 1) return alert("Preencha todos os campos!");
 
     console.log(user, Http("POST", user))
 
     fetch("https://vel-tnpo.onrender.com/login/usuario", Http("POST", user))
     .then(response => response.text())
     .then(response => {
-        const resultado = response.data;
-        console.log(response)
-        if(resultado){
+        if(response == "true"){
             alert("Login validado com sucesso!");
             localStorage.setItem("User", JSON.stringify(user));
             return window.location = "/pages/dashboard.html";
         } else {
-            return alert("Senha ou login inválidos!")
+          return alert("Senha ou login inválidos!")
         }
     })
-    .catch(error => alert("Erro ao fazer a requisição!"));
+    .catch(error => {
+      console.log(error)
+      alert("Erro ao fazer a requisição!")
+    }
+      );
   }
 
   return (
@@ -46,7 +49,7 @@ function Login() {
             <svg stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="icon">
               <path d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" strokeLinejoin="round" strokeLinecap="round"></path>
             </svg>
-            <input required className="input" type="password" id='pass' placeholder="Senha" />
+            <input required className="input" type="password" id='senha' placeholder="Senha" />
           </div>
           <div className='form-group-checkbox'>
             <label className="switch">
