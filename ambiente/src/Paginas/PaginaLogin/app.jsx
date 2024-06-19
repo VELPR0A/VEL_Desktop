@@ -13,11 +13,10 @@ function Login() {
 
     if(user.email.length <= 1 || user.senha.length <= 1) return alert("Preencha todos os campos!");
 
-    console.log(user, Http("POST", user))
-
     fetch("https://vel-tnpo.onrender.com/login/usuario", Http("POST", user))
     .then(response => response.text())
     .then(response => {
+      console.log(response)
         if(response == "true"){
             alert("Login validado com sucesso!");
             localStorage.setItem("User", JSON.stringify(user));
