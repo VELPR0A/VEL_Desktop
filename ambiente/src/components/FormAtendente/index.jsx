@@ -13,9 +13,10 @@ export default function FormAtendente() {
             nome: document.querySelector("#nome").value,
             telefone: document.querySelector("#telefone").value,
             endereco: document.querySelector("#endereco").value,
-            valor: document.querySelector("#valor").value,
+            valor: Number(document.querySelector("#valor").value),
             descricao: document.querySelector("#descricao").value,
-            formaPagamento: Number(document.querySelector("#formaPagamento").value)
+            formaPagamento: Number(document.querySelector("#formaPagamento").value),
+            idUsuario: Number(JSON.parse(localStorage.getItem("User"))),
         }
 
         console.log(pedido)
@@ -60,7 +61,7 @@ export default function FormAtendente() {
 
                     <div>
                         <label htmlFor='valor'>Valor:</label>
-                        <input type="number" id='valor' min={1} required maxLength={9} />
+                        <input type="number" id='valor' step="0.01" min={1} required maxLength={9} />
                     </div>
 
                     <div>

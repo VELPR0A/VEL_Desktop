@@ -14,22 +14,24 @@ function Login() {
     if(user.email.length <= 1 || user.senha.length <= 1) return alert("Preencha todos os campos!");
 
     fetch("https://vel-tnpo.onrender.com/login/usuario", Http("POST", user))
-    .then(response => response.text())
+    .then(response => response.json())
     .then(response => {
       console.log(response)
-        if(response == "true"){
-            alert("Login validado com sucesso!");
-            localStorage.setItem("User", JSON.stringify(user));
-            return window.location = "/pages/dashboard.html";
+        if(response.isproprietario){
+          alert("Login de proprietário validado com sucesso!");
+          localStorage.setItem("User", JSON.stringify(response.id));
+          window.location = "/pages/dashboard.html";
+        } else if(!response.isproprietario){
+          alert("Login de atendente validado com sucesso!");
+          localStorage.setItem("User", JSON.stringify(response.id));
+          window.location = "/pages/paginaAtendente.html";
         } else {
-          return alert("Senha ou login inválidos!")
+          alert("Senha ou login inválidos!");
         }
     })
     .catch(error => {
-      console.log(error)
-      alert("Erro ao fazer a requisição!")
-    }
-      );
+      alert("Senha ou login inválidos!");
+    });
   }
 
   return (
