@@ -1,0 +1,117 @@
+.conteiner {
+    background-color: #ffffff;
+    width: 80%;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 4px 4px 7px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    max-height: 470px;
+    min-height: 470px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.conteiner::-webkit-scrollbar {
+    display: none;
+}
+
+/* Formatação botao adicionar entregador*/
+.botaoAdicionar {
+    background: transparent;
+    border-radius: 50px;
+    border: 1.5px solid #005A8D;
+    padding: 10px 20px 3px 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    color: #005A8D;
+    font-family: Biryani;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 100%;
+    transition: all 400ms;
+
+    &:hover {
+        background: #005A8D;
+        color: #ffffff;
+    }
+}
+
+/* Formatação tabela*/
+.tabelaCoordenador {
+    width: 100%;
+    border-radius: 10px 10px 0px 0px;
+    border-collapse: collapse;
+    overflow: hidden;
+}
+
+.tabelaCoordenador th,
+.tabelaCoordenador td {
+    background-color: #ffffff;
+    border-bottom: 2px solid #C6D8DB;
+    padding: 15px;
+}
+
+.tabelaCoordenador td {
+    color: #222;
+    font-family: Biryani;
+    font-size: 16px;
+    font-weight: 600;
+    vertical-align: middle;
+}
+
+.tabelaCoordenador th {
+    background-color: #F3F6F9;
+    text-align: left;
+    padding-bottom: 20px;
+    border: none;
+    padding: 15px;
+    color: #222;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.tabelaCoordenador tr {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* Formatação status entregador */
+.status {
+    vertical-align: middle;
+    /* Ensure the text is vertically aligned */
+}
+
+.statusCor {
+    display: inline-flex;
+    /* Ensure the dot is aligned with the text */
+    align-items: center;
+    justify-content: center;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.status.online .statusCor {
+    background-color: #2ECC70;
+}
+
+.status.offline .statusCor {
+    background-color: #FF6347;
+}
+
+/* Formatação botao do perfil */
+.botaoPerfil {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
