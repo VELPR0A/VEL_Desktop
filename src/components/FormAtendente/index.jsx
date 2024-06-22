@@ -19,12 +19,14 @@ export default function FormAtendente() {
             idUsuario: Number(JSON.parse(localStorage.getItem("User"))),
         }
 
-        console.log(pedido)
+        console.log(pedido.idUsuario)
 
         try{
-            const response = await fetch("https://vel-tnpo.onrender.com/pedido/adicionar", Http("POST", pedido));
+            const response = await fetch(`https://vel-tnpo.onrender.com/pedido/adicionar/${pedido.idUsuario}`, Http("POST", pedido));
             const resposta = await response.json();
             console.log(resposta);
+            alert("Pedido Enviado!");
+            document.querySelector("form").reset()
         } catch(error){
             alert("Erro em tentar se comunicar com o servidor, tente mais tarde. Se o erro persistir entre em contato.");
             console.log(error)
@@ -34,16 +36,12 @@ export default function FormAtendente() {
 
     return (
         <form className={style.conteiner} onSubmit={enviaInformacoes}>
-
             <div className={style.modalFormConteiner}>
-
                 <div className={style.modalFormGrupo}>
-
                     <div>
                         <label htmlFor='nome'>Nome do cliente:</label>
                         <input type="text" id='nome' required maxLength={100}/>
                     </div>
-
                     <div>
                         <label htmlFor='telefone'>Telefone:</label>
                         <input type="tel" id='telefone' required maxLength={14} />
