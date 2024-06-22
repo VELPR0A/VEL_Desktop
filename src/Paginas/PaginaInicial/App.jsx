@@ -23,7 +23,7 @@ function PaginaInicial() {
                 <nav>
                     <div className="logo"></div>
                     <ul className="ul">
-                        <li><a href="#">Sobre</a></li>
+                        <li><a href="/pages/Sobre.html">Sobre</a></li>
                         <li className='pointer' onClick={scrollWin}>
                           <a>Nossos Planos</a>
                           </li>
