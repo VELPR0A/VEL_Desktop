@@ -89,6 +89,10 @@ input[type="month"]{
     width: 90%;
     padding: 1.5em 2.5em;
     border-radius: 10px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    height: 50%;
 }
 
 .Titulo-Tabela {
@@ -164,6 +168,10 @@ input[type="month"]{
     flex-direction: row;
     width: 90%;
     justify-content: end;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 25px;
 }
 
 .Despesas,
@@ -204,4 +212,10 @@ input[type="month"]{
     font-weight: 800;
     font-size: 1.7em;
     color: #0CC95B;
+}
+
+@media screen and (max-width: 1090px) {
+    .Quadro {
+        height: 37%;
+    }
 }

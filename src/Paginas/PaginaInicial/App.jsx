@@ -3,6 +3,7 @@ import './paginaInicial.css';
 import CelularImg from "../../assets/images/Celular.png";
 import ProfileImg from "../../assets/images/Perfil.png";
 import { FaStar } from "react-icons/fa";
+import LogoVEL from "../../assets/images/VEL.jpg"
 import English from "../../assets/images/En.png";
 
 function PaginaInicial() {
@@ -21,7 +22,7 @@ function PaginaInicial() {
    <div className="container">
             <div className="nav-bar">
                 <nav>
-                    <div className="logo"></div>
+                    <img src={LogoVEL} alt="Logo VEL" style={{width: "65px", borderRadius: "10px"}} />
                     <ul className="ul">
                         <li><a href="/pages/Sobre.html">Sobre</a></li>
                         <li className='pointer' onClick={scrollWin}>
@@ -29,8 +30,8 @@ function PaginaInicial() {
                           </li>
                           <li>
                           <a href="/pages/paginaInicialEn.html" className="idioma">
-                      <img src={English} alt="English Logo" style={{width: "35px"}} />
-                    </a>
+                            <img src={English} alt="English Logo" style={{width: "35px"}} />
+                          </a>
                           </li>
                         <li><a href="../../../pages/paginaLogin.html"><button className='Login'>Login</button></a></li>
                         

@@ -37,6 +37,10 @@ body {
     width: 90%;
     padding: 1.5em 2.5em;
     border-radius: 10px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    height: 75%;
 }
 
 .Superior {

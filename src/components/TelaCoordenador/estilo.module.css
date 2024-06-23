@@ -21,6 +21,7 @@ body {
 
 .conteiner {
     display: flex;
+    min-height: 100vh;
 }
 
 .conteudoPrincipal {
@@ -28,4 +29,5 @@ body {
     flex-direction: column;
     align-items: center;
     width: -webkit-fill-available !important;
+    min-height: 100vh;
 }

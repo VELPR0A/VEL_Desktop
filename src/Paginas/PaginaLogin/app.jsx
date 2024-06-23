@@ -1,6 +1,7 @@
 import React from 'react';
 import './Login.css';  // Importa o CSS
 import Http from '../../components/RequisicaoHTTP/Http';
+import LogoVEL from "../../assets/images/VEL.jpg"
 
 function Login() {
   const verificaLogin = e => {
@@ -38,7 +39,7 @@ function Login() {
     <div className="container">
       <div className='imagem-fundo'></div>
       <div className="login-form">
-        <div className='imagem-logo'></div>
+        <img src={LogoVEL} className="LogoVEL" alt="Logo VEl" />
 
         <div className='form'>
         <h2 className='titulo'>Que bom ver você de novo</h2>

@@ -8,11 +8,11 @@
     flex-direction: column;
     align-items: flex-end;
 
-    max-height: 470px;
-    min-height: 470px;
     overflow-y: scroll;
     scrollbar-width: none;
     -ms-overflow-style: none;
+
+    height: 70%;
 }
 
 .conteiner::-webkit-scrollbar {

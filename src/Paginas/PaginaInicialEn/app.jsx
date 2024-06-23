@@ -4,6 +4,7 @@ import CelularImg from "../../assets/images/Celular.png";
 import ProfileImg from "../../assets/images/Perfil.png";
 import { FaStar } from "react-icons/fa";
 import Portuguese from "../../assets/images/pt.png";
+import LogoVEL from "../../assets/images/VEL.jpg";
 
 function PaginaInicial() {
  const scrollWin = () => window.scrollTo(0, 3400);
@@ -21,17 +22,17 @@ function PaginaInicial() {
   <div className="container">
       <div className="nav-bar">
         <nav>
-          <div className="logo"></div>
+        <img src={LogoVEL} alt="Logo VEL" style={{width: "65px", borderRadius: "10px"}} />
           <ul className="ul">
-            <li><a href="#">About</a></li>
+            <li><a href="/pages/SobreEn.html">About</a></li>
             <li className='pointer' onClick={scrollWin}>
              <a>Our Plans</a>
              </li>
              <li>
-                          <a href="/pages/paginaInicial.html" className="idioma">
-                      <img src={Portuguese} alt="Portuguese Logo" style={{width: "35px"}} />
-                    </a>
-                          </li>
+                <a href="/pages/paginaInicial.html" className="idioma">
+                  <img src={Portuguese} alt="Portuguese Logo" style={{width: "35px"}} />
+                </a>
+              </li>
             <li><a href="../../../pages/paginaLogin.html"><button className='Login'>Login</button></a></li>
              
             <button className='Cadastro' onClick={scrollWin} >

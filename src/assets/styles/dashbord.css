@@ -293,3 +293,21 @@ footer div:first-of-type{
         grid-row: 5 / 7;
     }
 }
+
+@media screen and (max-height: 850px) {
+    .item > main{
+        display: flex;
+        flex-direction: column;
+        gap: 0px !important;
+    }
+
+    .item .valorEn{
+        font-size: 1em !important;
+        color: #404040;
+    }
+    
+    .item h2{
+        font-size: 1em !important;
+        color: #404040;
+    }
+}
