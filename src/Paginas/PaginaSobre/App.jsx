@@ -3,7 +3,7 @@ import './Sobre.css';  // Importa o CSS
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import iconVisao from '../../assets/images/icons/Visão.png';
 import iconValores from '../../assets/images/icons/Valores.png';
-import iconOds04 from '../../assets/images/icons/ODS04.png';
+import iconOds04 from '../../assets/images/icons/ODS9.png';
 import iconOds08 from '../../assets/images/icons/ODS08.png';
 import iconOds11 from '../../assets/images/icons/ODS11.png';
 import Diogo from "../../assets/images/Diogo.png"; 
@@ -103,13 +103,13 @@ function Login() {
         <div className='cardODS'>
           <div className='ODS4'>
           <img src={iconOds04} alt="" className='iconOds04' />
-            <h1>ODS 04</h1>
-            <p>Nosso objetivo é transformar a gestão de restaurantes com dados úteis para o sucesso do negócio, além de melhorar o ambiente de trabalho dos entregadores, assegurando pagamentos mais seguros.</p>
+            <h1>ODS 09</h1>
+            <p>A plataforma VEL utiliza tecnologia avançada para inovar na gestão de entregas, melhorando a eficiência das operações e dos processos financeiros.</p>
           </div>
           <div className='ODS8'>
           <img src={iconOds08} alt="" className='iconOds04' />
             <h1>ODS 08</h1>
-            <p>Pretendemos também oferecer conhecimento em educação financeira através de cursos com vídeos curtos sobre como lidar melhor com o dinheiro, promovendo uma vida financeira mais próspera para os entregadores.</p>
+            <p>Nosso objetivo é transformar a gestão de restaurantes com dados úteis para o sucesso do negócio, além de melhorar o ambiente de trabalho dos entregadores, assegurando pagamentos mais seguros.</p>
           </div>
           <div className='ODS11'>
           <img src={iconOds11} alt="" className='iconOds04' />

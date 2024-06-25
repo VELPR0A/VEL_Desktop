@@ -3,7 +3,7 @@ import './Sobre.css';  // Importa o CSS
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import iconVisao from '../../assets/images/icons/Visão.png';
 import iconValores from '../../assets/images/icons/Valores.png';
-import iconOds04 from '../../assets/images/icons/ODS04.png';
+import iconOds04 from '../../assets/images/icons/ODS9.png';
 import iconOds08 from '../../assets/images/icons/ODS08.png';
 import iconOds11 from '../../assets/images/icons/ODS11.png';
 import Diogo from "../../assets/images/Diogo.png"; 
@@ -102,19 +102,19 @@ function Login() {
         <h1>What We Are Contributing to Sustainable Development</h1>
         <div className='cardODS'>
           <div className='ODS4'>
-          <img src={iconOds04} alt="" className='iconOds04' />
-            <h1>ODS 04</h1>
-            <p>Our goal is to transform restaurant management with useful data for business success, as well as improve the working environment for deliverers, ensuring safer payments.</p>
+            <img src={iconOds04} alt="" className='iconOds04' />
+            <h1>ODS 09</h1>
+            <p>The VEL platform uses advanced technology to innovate in delivery management, improving the efficiency of operations and financial processes.</p>
           </div>
           <div className='ODS8'>
-          <img src={iconOds08} alt="" className='iconOds04' />
+            <img src={iconOds08} alt="" className='iconOds04' />
             <h1>ODS 08</h1>
-            <p>We also aim to offer financial education through courses with short videos on how to better manage money, promoting a more prosperous financial life for deliverers.</p>
+            <p>Our goal is to transform restaurant management with useful data for business success, as well as improving the working environment for delivery drivers, ensuring safer payments.</p>
           </div>
           <div className='ODS11'>
-          <img src={iconOds11} alt="" className='iconOds04' />
+            <img src={iconOds11} alt="" className='iconOds04' />
             <h1>ODS 11</h1>
-            <p>We will contribute to a more eco-friendly work environment by replacing paper tickets with virtual ones, reducing paper production and waste.</p>
+            <p>We will contribute to a greener working environment by replacing paper orders with virtual ones, reducing paper production and waste.</p>
           </div>
         </div>
       </div>
