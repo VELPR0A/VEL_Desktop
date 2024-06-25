@@ -8,7 +8,7 @@ export default function TelaAtendente() {
     <div className={style.conteiner}>
       <MenuLateral pagina="Atendente" />
       <div className={style.conteudoPrincipal}>
-        <Header titulo="Atribuir Pedidos" empresa=""/>
+        <Header titulo="Atribuir Pedidos" empresa="" />
         <FormAtendente />
       </div>
     </div>

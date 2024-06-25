@@ -4,7 +4,7 @@ import CelularImg from "../../assets/images/Celular.png";
 import ProfileImg from "../../assets/images/Perfil.png";
 import { FaStar } from "react-icons/fa";
 import Portuguese from "../../assets/images/pt.png";
-import LogoVEL from "../../assets/images/VEL.jpg";
+import LogoVEL from "../../assets/images/VEL.png";
 
 function PaginaInicial() {
  const scrollWin = () => window.scrollTo(0, 3400);
@@ -138,35 +138,43 @@ function PaginaInicial() {
        <div className='TiposPlanos'>
 
         <div className='Desperte'>
-         <h2 className='tituloCard'>Awaken</h2>
-         <p className='conteudoPlano'> Access our entire platform and register up to 10 couriers</p>
-         <p className="precoVelho">R$ 149,90</p>
-         <p className="precoNovo">R$ 119,90/month</p>
-         <button onClick={enviarPlano} className="buttonCard 1">Start for free</button>
+         <div>
+           <h2 className='tituloCard'>Awaken</h2>
+           <p className='conteudoPlano'> Access our entire platform and register up to 10 couriers</p>
+           <p className="precoVelho">R$ 149,90</p>
+           <p className="precoNovo">R$ 119,90/month</p>
+           <button onClick={enviarPlano} className="buttonCard 1">Start for free</button>
+         </div>
         </div>
 
         <div className='Desperte'>
-         <h2 className='tituloCard'>Conquer</h2>
-         <p className='conteudoPlano'> Access our entire platform and register up to 30 couriers</p>
-         <p className="precoVelho">R$ 279,90</p>
-         <p className="precoNovo">R$ 219,90/month</p>
-         <button onClick={enviarPlano} className="buttonCard 2">Start for free</button>
+         <div>
+           <h2 className='tituloCard'>Conquer</h2>
+           <p className='conteudoPlano'> Access our entire platform and register up to 30 couriers</p>
+           <p className="precoVelho">R$ 279,90</p>
+           <p className="precoNovo">R$ 219,90/month</p>
+           <button onClick={enviarPlano} className="buttonCard 2">Start for free</button>
+         </div>
         </div>
 
         <div className='Desperte'>
-         <h2 className='tituloCard'>Dominate</h2>
-         <p className='conteudoPlano'> Access our entire platform and register up to 60 couriers</p>
-         <p className="precoVelho">R$ 339,90</p>
-         <p className="precoNovo">R$ 269,90/month</p>
-         <button onClick={enviarPlano} className="buttonCard 3">Start for free</button>
+         <div>
+           <h2 className='tituloCard'>Dominate</h2>
+           <p className='conteudoPlano'> Access our entire platform and register up to 60 couriers</p>
+           <p className="precoVelho">R$ 339,90</p>
+           <p className="precoNovo">R$ 269,90/month</p>
+           <button onClick={enviarPlano} className="buttonCard 3">Start for free</button>
+         </div>
         </div>
 
         <div className='Desperte'>
-         <h2 className='tituloCard'>Transform</h2>
-         <p className='conteudoPlano'> Access our entire platform and register unlimited couriers </p>
-         <p className="precoVelho">R$ 669,90</p>
-         <p className="precoNovo">R$ 539,90/month</p>
-         <button onClick={enviarPlano} className="buttonCard 4">Start for free</button>
+         <div>
+           <h2 className='tituloCard'>Transform</h2>
+           <p className='conteudoPlano'> Access our entire platform and register unlimited couriers </p>
+           <p className="precoVelho">R$ 669,90</p>
+           <p className="precoNovo">R$ 539,90/month</p>
+           <button onClick={enviarPlano} className="buttonCard 4">Start for free</button>
+         </div>
         </div>
         </div>
 

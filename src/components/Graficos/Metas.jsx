@@ -1,7 +1,10 @@
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
 
-export default function Metas(){
+export default function Metas({valores}){
+    console.log(valores.map(valor => {
+        return [new Date(valor.data).getTime(), valor.ganho]
+    }))
     const options = {
         chart: {
             zooming: {
@@ -63,7 +66,9 @@ export default function Metas(){
         series: [{
             type: 'area',
             name: 'Faturamento - R$',
-            data: [[1262304000000,12000],[1262563200000,45000],[1262649600000,30000]]
+            data: valores.map(valor => {
+                return [new Date(valor.data).getTime(), valor.ganho]
+            }).sort((a, b) => a[0] - b[0])
         }]
     }
       

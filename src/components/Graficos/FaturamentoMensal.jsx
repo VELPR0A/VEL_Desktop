@@ -1,7 +1,7 @@
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
 
-export default function FaturamentoMensal(){
+export default function FaturamentoMensal({listaFaturamento}){
     const options = {
         chart: {
             type: 'column'

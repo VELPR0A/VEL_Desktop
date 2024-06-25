@@ -3,8 +3,12 @@ import './paginaInicial.css';
 import CelularImg from "../../assets/images/Celular.png";
 import ProfileImg from "../../assets/images/Perfil.png";
 import { FaStar } from "react-icons/fa";
-import LogoVEL from "../../assets/images/VEL.jpg"
+import LogoVEL from "../../assets/images/VEL.png";
 import English from "../../assets/images/En.png";
+import linkedinIcon from "../../assets/images/icons/Linkedin.png";
+import instagramIcon from "../../assets/images/icons/Instagram.png";
+import githubIcon from "../../assets/images/icons/Github.png";
+import gmailIcon from "../../assets/images/icons/Gmail.png";
 
 function PaginaInicial() {
   const scrollWin = () => window.scrollTo(0, 3400);
@@ -140,61 +144,69 @@ function PaginaInicial() {
               <div className='TiposPlanos'>
 
                 <div className='Desperte'>
-                  <h2 className='tituloCard'>Desperte</h2>
-                  <p className='conteudoPlano'> Acesso a toda nossa plataforma e cadastre até 10 entregadores</p>
-                  <p className="precoVelho">R$ 149,90</p>
-                  <p className="precoNovo">R$ 119,90/mês</p>
-                  <button onClick={enviarPlano} className="buttonCard 1">Comece grátis</button>
+                  <div>
+                    <h2 className='tituloCard'>Desperte</h2>
+                    <p className='conteudoPlano'> Acesso a toda nossa plataforma e cadastre até 10 entregadores</p>
+                    <p className="precoVelho">R$ 149,90</p>
+                    <p className="precoNovo">R$ 119,90/mês</p>
+                    <button onClick={enviarPlano} className="buttonCard 1">Comece grátis</button>
+                  </div>
                 </div>
 
                 <div className='Desperte'>
-                  <h2 className='tituloCard'>Conquiste</h2>
-                  <p className='conteudoPlano'> Acesso a toda nossa plataforma e cadastre até 30 entregadores</p>
-                  <p className="precoVelho">R$ 279,90</p>
-                  <p className="precoNovo">R$ 219,90/mês</p>
-                  <button onClick={enviarPlano} className="buttonCard 2">Comece grátis</button>
+                  <div>
+                    <h2 className='tituloCard'>Conquiste</h2>
+                    <p className='conteudoPlano'> Acesso a toda nossa plataforma e cadastre até 30 entregadores</p>
+                    <p className="precoVelho">R$ 279,90</p>
+                    <p className="precoNovo">R$ 219,90/mês</p>
+                    <button onClick={enviarPlano} className="buttonCard 2">Comece grátis</button>
+                  </div>
                 </div>
 
                 <div className='Desperte'>
-                  <h2 className='tituloCard'>Domine</h2>
-                  <p className='conteudoPlano'> Acesso a toda nossa plataforma e cadastre até 60 entregadores</p>
-                  <p className="precoVelho">R$ 339,90</p>
-                  <p className="precoNovo">R$ 269,90/mês</p>
-                  <button onClick={enviarPlano} className="buttonCard 3">Comece grátis</button>
+                  <div>
+                    <h2 className='tituloCard'>Domine</h2>
+                    <p className='conteudoPlano'> Acesso a toda nossa plataforma e cadastre até 60 entregadores</p>
+                    <p className="precoVelho">R$ 339,90</p>
+                    <p className="precoNovo">R$ 269,90/mês</p>
+                    <button onClick={enviarPlano} className="buttonCard 3">Comece grátis</button>
+                  </div>
                 </div>
 
                 <div className='Desperte'>
-                  <h2 className='tituloCard'>Tranforme</h2>
-                  <p className='conteudoPlano'> Acesso a toda nossa plataforma e cadastro ilimitado de entregadores </p>
-                  <p className="precoVelho">R$ 669,90</p>
-                  <p className="precoNovo">R$ 539,90/mês</p>
-                  <button onClick={enviarPlano} className="buttonCard 4">Comece grátis</button>
+                  <div>
+                    <h2 className='tituloCard'>Transforme</h2>
+                    <p className='conteudoPlano'> Acesso a toda nossa plataforma e cadastro ilimitado de entregadores </p>
+                    <p className="precoVelho">R$ 669,90</p>
+                    <p className="precoNovo">R$ 539,90/mês</p>
+                    <button onClick={enviarPlano} className="buttonCard 4">Comece grátis</button>
+                  </div>
                 </div>
                 </div>
 
             </div>
 
 
-            <footer className="footer">
-      <div className="footer-section">
-        <h3>Virtual Easy Log</h3>
-        <ul>
-          <li><a href="#">© Wallet 2022</a></li>
-          <li><a href="#">Privacy policy</a></li>
-          <li><a href="#">Cookies policy</a></li>
-          <li><a href="#">Terms of use</a></li>
-        </ul>
-      </div>
-      <div className="footer-section">
-        <h3>Contatos</h3>
-        <p><strong>Instagram:</strong> VirtualEasyLog</p>
-        <p><strong>Linkedin</strong>: Virtual Easy Log</p>
-        <p><strong>Email:</strong> virtualeasylog@gmail.com</p>
-      </div>
-    </footer>
-
-            
-
+      <footer>
+        <div className='branco'>
+          <img src={LogoVEL} alt="Icone da empresa" />
+          <div className="icones">
+           <a href="#" target='_blank'> <img src={linkedinIcon} alt="" />linkedin.com/company/vel-br/</a> 
+           <a href="#" target='_blank'> <img src={instagramIcon} alt="" />@vel_proa</a> 
+           <a href="#" target='_blank'> <img src={githubIcon} alt="" />github.com/VELPR0A</a> 
+           <a href="#" target='_blank'> <img src={gmailIcon} alt="" />virtualeasylog@gmail.com</a> 
+          </div>
+        </div>
+        <div className="azul">
+          <span>
+            <p>© 2024 VEL. Todos os direitos reservados.</p>
+          </span>
+          <span>
+            <a href="#">Termos de Uso</a>
+            <a href="#">Política de Privacidade</a>
+          </span>
+        </div>
+      </footer>  
     </div>
   );
 }

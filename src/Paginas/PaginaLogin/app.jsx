@@ -1,7 +1,7 @@
 import React from 'react';
 import './Login.css';  // Importa o CSS
 import Http from '../../components/RequisicaoHTTP/Http';
-import LogoVEL from "../../assets/images/VEL.jpg"
+import LogoVEL from "../../assets/images/VEL.png"
 
 function Login() {
   const verificaLogin = e => {

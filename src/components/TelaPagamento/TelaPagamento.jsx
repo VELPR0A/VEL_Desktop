@@ -2,6 +2,7 @@ import "../../assets/styles/TelaPagamento.css";
 import { FaCreditCard, FaPaypal, FaPix } from "react-icons/fa6";
 import { FaCheckCircle, FaCheck } from "react-icons/fa";
 import { CiDiscount1 } from "react-icons/ci";
+import LogoVEL from "../../assets/images/VEL.png";
 import Http from '../../components/RequisicaoHTTP/Http';
 
 export default function TelaPagamento({valorPlano}){
@@ -45,7 +46,7 @@ export default function TelaPagamento({valorPlano}){
     return(
         <>
             <nav>
-                <h1 style={{fontWeight: "500"}}>Virtual <span className="laranja">Easy</span> Log</h1>
+                <img src={LogoVEL} alt="Logo da empresa" />
             </nav>
             <main>
                 <article>

@@ -473,17 +473,60 @@ p{
   /* DESPERTE*/
 
   .Desperte {
-    width: 270px;
-    height: 350px;
+    width: 279px;
+    height: 362px;
+    padding: 4px;
     border-radius: 15px;
-    padding: 20px;
     text-align: center;
     font-family: "Roboto", sans-serif;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
+    background-color: #000;
+    background-image: linear-gradient(to top, #005A8D, #F38342);
     display: flex;
     justify-content: center;
     flex-direction: column;
+    z-index: 0;
+}
+
+.Desperte:nth-of-type(3){
+  background-image: linear-gradient(to bottom, #005A8D, #F38342);
+}
+
+.Desperte > div{
+  position: relative;
+  z-index: 2;
+}
+
+.Desperte:nth-of-type(3) > div{
+  position: relative;
+  top: -18px;
+}
+
+.Desperte:nth-of-type(3)::before{
+  content: "Mais Vendidos";
+  position: relative;
+  width: 200px;
+  height: 25px;
+  left: 31px;
+  top: -55px;
+  padding: 5px;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  border-radius: 0 0 17px 17px;
+  background-color: #005A8D;
+  z-index: 3;
+}
+
+.Desperte::after{
+  content: "";
+  position: absolute;
+  display: block;
+  width: 231px;
+  height: 313px;
+  border-radius: 15px;
+  padding: 20px;
+  background-color: #ffffff;
+  z-index: 0;
 }
 
 .tituloCard {
@@ -532,52 +575,20 @@ p{
 
 /* Add these styles to your existing styles.css file */
 
-.footer {
-  background-color: #005b80;
-  color: white;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 20px 40px;
-  font-size: 14px;
-}
-
-.footer-section {
+footer {
   display: flex;
   flex-direction: column;
+  font-family: "Biryani";
 }
 
-.footer-section h3 {
-  margin: 0 0 10px;
-}
-
-.footer-section p {
-  padding: 0;
-  margin: 0;
-  display: inline;
-  margin-right: 15px;
-  color: white;
-  font-size: 14px;
+footer .branco{
   display: flex;
-  text-align: left;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-.footer-section ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-section ul li {
-  display: inline;
-  margin-right: 15px;
-}
-
-.footer-section ul li a {
-  color: white;
-  text-decoration: none;
-}
-
-.footer-section ul li a:hover {
-  text-decoration: underline;
+footer > .branco img{
+  max-width: 200px;
 }

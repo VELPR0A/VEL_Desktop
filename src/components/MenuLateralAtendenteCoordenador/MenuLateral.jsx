@@ -1,13 +1,9 @@
 import "../../assets/styles/MenuLateral.css";
 import image from "../../assets/images/logoExemplo.png";
-import iconeDashboard from "../../assets/images/icons/Dashboard.png";
-import iconePagamentos from "../../assets/images/icons/Pagamentos.png";
-import iconeEntregadores from "../../assets/images/icons/Entregadores.png";
-import iconeFaturamento from "../../assets/images/icons/Faturamento.png";
-import iconeContrato from "../../assets/images/icons/Contrato.png";
 import iconeCoordenadores from "../../assets/images/icons/Coordenadores.png";
 import iconeConfiguração from "../../assets/images/icons/Configuração.png";
 import iconeMenu from "../../assets/images/icons/Menu.png";
+import LogoVEL from "../../assets/images/VEL2.png"
 
 export default function MenuLateral({pagina}){
     function toggleMenu(event){
@@ -48,8 +44,8 @@ export default function MenuLateral({pagina}){
 
     return(
         <aside className="MenuLateral">
-            <header>
-                <h1>Virtual <span className="laranja">Easy</span> Log</h1>
+            <header style={{display: "flex", justifyContent: "center"}}>
+                <img src={LogoVEL} className="LogoVEL" alt="Logo VEl" style={{width: "60%", margin: "30px 0"}} />
             </header>
             <div className="ToggleButton"><img src={iconeMenu} alt="Menu para fechar menu lateral" onClick={toggleMenu} /></div>
             <main>
