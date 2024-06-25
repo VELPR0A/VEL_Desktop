@@ -2,9 +2,6 @@ import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
 
 export default function Metas({valores}){
-    console.log(valores.map(valor => {
-        return [new Date(valor.data).getTime(), valor.ganho]
-    }))
     const options = {
         chart: {
             zooming: {

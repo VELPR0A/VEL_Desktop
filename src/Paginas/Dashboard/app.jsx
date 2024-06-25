@@ -11,7 +11,7 @@ import Http from '../../components/RequisicaoHTTP/Http';
 function App() {
   const [listaEntregadores, setListaEntregadores] = useState([]);
   const [listaFaturamento, setListaFaturamento] = useState([]);
-  const [listaMetas, setlistaMetas] = useState([]);
+  // const [listaMetas, setlistaMetas] = useState([]);
 
   const fetchEntregadores = async () => {
     try {
@@ -28,7 +28,6 @@ function App() {
     try {
       const requisicao = await fetch(`https://vel-tnpo.onrender.com/faturamento/${JSON.parse(localStorage.getItem("User"))}`);
       const informacoes = await requisicao.json();
-      console.log(informacoes);
       setListaFaturamento(informacoes);
     } catch (error) {
       console.log("Erro na requisição de dados", error);
@@ -36,21 +35,21 @@ function App() {
     }
   };
 
-  const fetchMetas = async () => {
-    try {
-      const requisicao = await fetch("http://localhost:3000/metas/");
-      const informacoes = await requisicao.json();
-      setlistaMetas(informacoes[0].metas);
-    } catch (error) {
-      console.log("Erro na requisição de dados", error);
-      alert("Erro na requisição de dados, tente recarregar a página!");
-    }
-  };
+  // const fetchMetas = async () => {
+  //   try {
+  //     const requisicao = await fetch("http://localhost:3000/metas/");
+  //     const informacoes = await requisicao.json();
+  //     setlistaMetas(informacoes[0].metas);
+  //   } catch (error) {
+  //     console.log("Erro na requisição de dados", error);
+  //     alert("Erro na requisição de dados, tente recarregar a página!");
+  //   }
+  // };
 
   useEffect(() => {
     fetchEntregadores();
     fetchFaturamento();
-    fetchMetas();
+    // fetchMetas();
   }, []);
 
   const faturamento = (card) => {
@@ -59,7 +58,6 @@ function App() {
     if(card == 0){
       const todayDate = date.getDate();
       const valorTotal = listaFaturamento.reduce((acumulador, item) => {
-        console.log(item.data, todayDate, item.data == todayDate)
         if(item.data.slice(8,10) == todayDate) acumulador += item.ganho;
         return acumulador;
       }, 0);
@@ -80,13 +78,12 @@ function App() {
     }
   }
 
-  const CartaoFaturamento = ({ titulo, divClasse, h2Classe, h4Classe, card }) => {
+  const CartaoFaturamento = ({ titulo, divClasse, h2Classe, card }) => {
     return (
       <div className={divClasse}>
         <main>
           <h2>R$ <span className={h2Classe}>{faturamento(card)}</span></h2>
           <h3>{titulo}</h3>
-          <h4><span className={h4Classe}>0%</span> na última semana</h4>
         </main>
         <aside>
           <img src={MoneyIcon} alt="Ícone de dinheiro" />
@@ -95,14 +92,36 @@ function App() {
     );
   };
 
-  const GraficoConteudo = ({ divClass, h2, h3Span, pSpan, grafico }) => {
+  const GraficoConteudo1 = ({ divClass, h2, grafico}) => {
     return (
       <div className={divClass}>
         <div className="conteudo">
           <h2>{h2}</h2>
-          <h3>R$ <span>{h3Span}</span></h3>
-          <p><span>{pSpan}%</span> na última semana</p>
+          <h3>R$ <span>{1000}</span></h3>
           {grafico}
+        </div>
+      </div>
+    );
+  };
+
+  const GraficoConteudo2 = ({ divClass, h2, grafico}) => {
+    let despesa = listaFaturamento.map(item => item.despesa);
+    despesa = despesa.reduce((acumulador, valor) => {
+      if(valor) acumulador += valor;
+      return acumulador; 
+    }, 0);
+    const date = new Date();
+    const todayMonth = date.getMonth();
+    const valorTotal = listaFaturamento.reduce((acumulador, item) => {
+      if(item.data.slice(5,7) == todayMonth + 1) acumulador += item.ganho;
+      return acumulador;
+    }, 0);
+    return (
+      <div className={divClass}>
+        <div className="conteudo">
+          <h2>{h2}</h2>
+          <h3>R$ <span>{despesa}</span></h3>
+          <Despesas valorDespesa={despesa} valorGanho={valorTotal}/>
         </div>
       </div>
     );
@@ -125,9 +144,9 @@ function App() {
       <MenuLateral pagina="Dashboard" />
 
       <div className="container">
-        <CartaoFaturamento titulo="Faturamento Diário" divClasse="item FD" h2Classe="valorFD" h4Classe="porcFD" card="0" />
-        <CartaoFaturamento titulo="Faturamento Mensal" divClasse="item FS" h2Classe="valorFS" h4Classe="porcFS" card="1" />
-        <CartaoFaturamento titulo="Total a pagar" divClasse="item TP" h2Classe="valorTP" h4Classe="porcTP" card="2" />
+        <CartaoFaturamento titulo="Faturamento Diário" divClasse="item FD" h2Classe="valorFD" card="0" />
+        <CartaoFaturamento titulo="Faturamento Mensal" divClasse="item FS" h2Classe="valorFS" card="1" />
+        <CartaoFaturamento titulo="Total a pagar" divClasse="item TP" h2Classe="valorTP" card="2" />
 
         <div className="item En">
           <main>
@@ -139,8 +158,8 @@ function App() {
           </aside>
         </div>
 
-        <GraficoConteudo divClass="item Graf1" h2="Metas" h3Span="0" pSpan="0" grafico={<FaturamentoMensal />} />
-        <GraficoConteudo divClass="item Graf2" h2="Despesas" h3Span="0" pSpan="0" grafico={<Despesas />} />
+        <GraficoConteudo1 divClass="item Graf1" h2="Metas" grafico={<FaturamentoMensal />} />
+        <GraficoConteudo2 divClass="item Graf2" h2="Despesas" />
 
         <div className="item Graf3">
           <Metas valores={listaFaturamento} />

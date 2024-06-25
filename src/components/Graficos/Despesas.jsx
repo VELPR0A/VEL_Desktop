@@ -1,7 +1,7 @@
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
 
-export default function Despesas(){
+export default function Despesas({valorDespesa, valorGanho}){
     const options = {
         chart: {
             plotBackgroundColor: null,
@@ -9,7 +9,7 @@ export default function Despesas(){
             plotShadow: false
         },
         title: {
-            text: '75%',
+            text: `${((valorDespesa / (valorGanho + valorDespesa)) * 100).toFixed(2)}%`,
             align: 'center',
             verticalAlign: 'middle',
             y: 60,
@@ -43,11 +43,11 @@ export default function Despesas(){
         },
         series: [{
             type: 'pie',
-            name: 'Valor',
+            name: 'Porcentagem',
             innerSize: '50%',
             data: [
-                ['Gastos', 75],
-                ['Última <br> semana', 25]
+                ['Gastos', valorDespesa],
+                ['Ganhos', valorGanho]
             ]
         }]
     }

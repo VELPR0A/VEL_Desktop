@@ -28,11 +28,11 @@ export default function FaturamentoMensal({listaFaturamento}){
         series: [
             {
                 name: 'Faturado R$',
-                data: [["Segunda",12000],["Terça",45000],["Quarta",30000], ["Quinta", 400],["Sexta", 25000]]
+                data: [["Segunda",12000],["Terça",45000],["Quarta",30000], ["Quinta", 400],["Sexta", 25000], ["Sábado", 15000], ["Domingo", 11000]]
             },
             {
                 name: 'Meta R$',
-                data: [["Segunda",12000],["Terça",45000],["Quarta",30000], ["Quinta", 400],["Sexta", 25000]]
+                data: [["Segunda",12000],["Terça",45000],["Quarta",30000], ["Quinta", 400],["Sexta", 25000], ["Sábado", 12000], ["Domingo", 5000]]
             }
         ]
     }

@@ -80,8 +80,8 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: #f00;
-    background-image: radial-gradient(#EF0606, #B00101);
+    background-color: #0f0;
+    background-image: radial-gradient(#06EF06, #01B001);
 }
 
 .nomeEmpresa{
