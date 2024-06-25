@@ -1,10 +1,16 @@
 import React from 'react';
 import '../PaginaInicial/paginaInicial.css';
+import './cardIn.css';
 import CelularImg from "../../assets/images/Celular.png";
 import ProfileImg from "../../assets/images/Perfil.png";
 import { FaStar } from "react-icons/fa";
 import Portuguese from "../../assets/images/pt.png";
 import LogoVEL from "../../assets/images/VEL.png";
+import linkedinIcon from "../../assets/images/icons/Linkedin.png";
+import instagramIcon from "../../assets/images/icons/Instagram.png";
+import githubIcon from "../../assets/images/icons/Github.png";
+import gmailIcon from "../../assets/images/icons/Gmail.png";
+
 
 function PaginaInicial() {
  const scrollWin = () => window.scrollTo(0, 3400);
@@ -179,27 +185,26 @@ function PaginaInicial() {
         </div>
 
       </div>
-
-      <footer className="footer">
-   <div className="footer-section">
-    <h3>Virtual Easy Log</h3>
-    <ul>
-     <li><a href="#">© Wallet 2022</a></li>
-     <li><a href="#">Privacy policy</a></li>
-     <li><a href="#">Cookies policy</a></li>
-     <li><a href="#">Terms of use</a></li>
-    </ul>
-   </div>
-   <div className="footer-section">
-    <h3>Contacts</h3>
-    <p><strong>Instagram:</strong> VirtualEasyLog</p>
-    <p><strong>LinkedIn:</strong> Virtual Easy Log</p>
-    <p><strong>Email:</strong> virtualeasylog@gmail.com</p>
-   </div>
-  </footer>
-
-       
-
+      <footer>
+        <div className='branco'>
+          <img src={LogoVEL} alt="Icone da empresa" />
+          <div className="icones">
+           <a href="https://www.linkedin.com/company/vel-br" target='_blank'> <img src={linkedinIcon} alt="" />linkedin.com/company/vel-br/</a> 
+           <a href="https://www.instagram.com/vel_proa/" target='_blank'> <img src={instagramIcon} alt="" />@vel_proa</a> 
+           <a href="https://github.com/VELPR0A" target='_blank'> <img src={githubIcon} alt="" />github.com/VELPR0A</a> 
+           <a href="#" target='_blank'> <img src={gmailIcon} alt="" />virtualeasylog@gmail.com</a> 
+          </div>
+        </div>
+        <div className="azul">
+          <span>
+            <p>© 2024 VEL. All rights reserved.</p>
+          </span>
+          <span>
+            <a href="#">Terms of use</a>
+            <a href="#">Privacy Policy</a>
+          </span>
+        </div>
+      </footer>  
   </div>
  );
 }

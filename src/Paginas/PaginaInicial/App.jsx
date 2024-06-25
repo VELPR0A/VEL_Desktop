@@ -185,15 +185,13 @@ function PaginaInicial() {
                 </div>
 
             </div>
-
-
       <footer>
         <div className='branco'>
           <img src={LogoVEL} alt="Icone da empresa" />
           <div className="icones">
-           <a href="#" target='_blank'> <img src={linkedinIcon} alt="" />linkedin.com/company/vel-br/</a> 
-           <a href="#" target='_blank'> <img src={instagramIcon} alt="" />@vel_proa</a> 
-           <a href="#" target='_blank'> <img src={githubIcon} alt="" />github.com/VELPR0A</a> 
+           <a href="https://www.linkedin.com/company/vel-br" target='_blank'> <img src={linkedinIcon} alt="" />linkedin.com/company/vel-br/</a> 
+           <a href="https://www.instagram.com/vel_proa/" target='_blank'> <img src={instagramIcon} alt="" />@vel_proa</a> 
+           <a href="https://github.com/VELPR0A" target='_blank'> <img src={githubIcon} alt="" />github.com/VELPR0A</a> 
            <a href="#" target='_blank'> <img src={gmailIcon} alt="" />virtualeasylog@gmail.com</a> 
           </div>
         </div>

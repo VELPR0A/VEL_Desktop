@@ -587,8 +587,80 @@ footer .branco{
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
+  padding: 30px 0;
+  background-color: #fff;
 }
 
 footer > .branco img{
   max-width: 200px;
+}
+
+footer > .branco a{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+  color: #005A8D;
+  font-weight: bold;
+}
+
+footer > .branco a:hover{
+  color: #e6692e;
+}
+
+footer > .branco div{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+footer > .azul{
+  display: flex;
+  justify-content: space-between;
+}
+
+footer > .azul{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: #fff;
+  padding: 5px 20px;
+  background-color: #005A8D;
+}
+
+footer > .azul span{
+  padding: 5px;
+  display: flex;
+  gap: 100px;
+}
+
+footer > .azul span a{
+  font-size: 1.1em;
+  color: #fff;
+}
+
+footer > .azul span a:hover{
+  color: #e6692e;
+}
+
+
+footer > .azul span p{
+  font-size: 1.1em;
+}
+
+@media screen and (min-width: 1070px) { 
+  footer > .branco div{
+    gap: 30px;
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 880px) { 
+  footer > .azul{
+    justify-content: space-between;
+    padding: 5px 20px;
+  }
 }
