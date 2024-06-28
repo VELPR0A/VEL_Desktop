@@ -3,9 +3,11 @@ import './Sobre.css';  // Importa o CSS
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import iconVisao from '../../assets/images/icons/Visão.png';
 import iconValores from '../../assets/images/icons/Valores.png';
+import iconMissoes from "../../assets/images/icons/Missao.png"
 import iconOds04 from '../../assets/images/icons/ODS9.png';
 import iconOds08 from '../../assets/images/icons/ODS08.png';
 import iconOds11 from '../../assets/images/icons/ODS11.png';
+import telescopio from "../../assets/images/icons/telescopio.webp"
 import Diogo from "../../assets/images/Diogo.png"; 
 import Elias from "../../assets/images/Elias.png";
 import Emilly from "../../assets/images/Emilly.png";
@@ -16,11 +18,18 @@ import Isabella from "../../assets/images/Isabella.png";
 
 const teamMembers = [
   {
-    name: 'Iago Matheus',
-    role: 'Desenvolvedor Full-Stack | Designer | Social media ',
-    github: 'https://github.com/IagoMat',
-    linkedin: 'https://www.linkedin.com/in/iagomatheus/',
-    img: Iago
+    name: 'Diogo Antonny',
+    role: 'Scrum Master | Desenvolvedor Full-stack',
+    github: 'https://github.com/DiogoJP202',
+    linkedin: 'https://www.linkedin.com/in/diogo-antonny/',
+    img: Diogo
+  },
+  {
+    name: 'Elias Andrade',
+    role: 'Adm de Banco de Dados | Desenvolvedor Back-End',
+    github: 'https://github.com/EliasAndrad',
+    linkedin: 'https://www.linkedin.com/in/elias-andrade-/',
+    img: Elias
   },
   {
     name: 'Emilly Freitas',
@@ -37,20 +46,6 @@ const teamMembers = [
     img: Gabrielle
   },
   {
-    name: 'Diogo Antonny',
-    role: 'Scrum Master | Desenvolvedor Full-stack',
-    github: 'https://github.com/DiogoJP202',
-    linkedin: 'https://www.linkedin.com/in/diogo-antonny/',
-    img: Diogo
-  },
-  {
-    name: 'Isabella Ribas',
-    role: 'PO | Desenvolvadora Full stack',
-    github: 'https://github.com/Isabella2709',
-    linkedin: 'https://www.linkedin.com/in/isabella-ribas-46579b176/',
-    img: Isabella
-  },
-  {
     name: 'Gustavo Teixeira',
     role: 'Financeiro | Desewnvolvedor Front-End',
     github: 'https://github.com/PettaDev',
@@ -58,11 +53,18 @@ const teamMembers = [
     img: Gustavo
   },
   {
-    name: 'Elias Andrade',
-    role: 'Adm de Banco de Dados | Desenvolvedor Back-End',
-    github: 'https://github.com/EliasAndrad',
-    linkedin: 'https://www.linkedin.com/in/elias-andrade-/',
-    img: Elias
+    name: 'Iago Matheus',
+    role: 'Desenvolvedor Full-Stack | Designer ',
+    github: 'https://github.com/IagoMat',
+    linkedin: 'https://www.linkedin.com/in/iagomatheus/',
+    img: Iago
+  },
+  {
+    name: 'Isabella Ribas',
+    role: 'PO | Desenvolvadora Full stack',
+    github: 'https://github.com/Isabella2709',
+    linkedin: 'https://www.linkedin.com/in/isabella-ribas-46579b176/',
+    img: Isabella
   }
 ];
 
@@ -73,25 +75,31 @@ function Login() {
         <div className='transparencia'>
         <h1 className='titulo'> Como te ajudamos nas suas entregas</h1>
           <div className='MVV'>
-            <div className='missao'>
-              <div className='iconMissao'></div>
-              <h1>Nossa Missão</h1>
-              <p>Proporcionar uma solução eficiente e transparente para a gestão de entregas, eliminando o uso de papel e automatizando processos financeiros. Nosso foco é melhorar a produtividade dos negócios e garantir uma remuneração justa e precisa para os entregadores.</p>
-            </div>
-            <div className='VV'>
-              <div className='visao'>
-                <img src={iconVisao} alt=""/>
-                <div className='conteudo'>
-                <h1>Nossa Visão</h1>
-                <p>Ser a plataforma líder na gestão de entregas, reconhecida pela inovação e excelência no atendimento às necessidades de restaurantes e empresas de motoboys.</p>
-                </div>
+            <div className='missao card'>
+              <img src={iconMissoes} alt=""/>
+              <div className="conteudo">
+                <h1>Nossa Missão</h1>
+                <li>Proporcionar uma solução eficiente e transparente para a gestão de entregas.</li>
+                <li>Eliminar o uso de papel.</li>
+                <li>Garantir remuneração justa e precisa para os entregadores.</li>
               </div>
-              <div className='valor'>
-                <img src={iconValores} alt="" />
-                <div className='texto'>
-                  <h1>Nossos Valores</h1>
-                  <p>Transparência, eficiência e segurança são os pilares da nossa atuação. Acreditamos na importância de uma gestão financeira clara e na valorização do trabalho dos entregadores. Nosso compromisso é com a melhoria contínua e a satisfação de nossos clientes.</p>
-                </div>
+            </div>
+            <div className='visao card'>
+              <img src={iconVisao} alt=""/>
+              <div className='conteudo'>
+              <h1>Nossa Visão</h1>
+              <li>Ser a plataforma líder na gestão de entregas.</li>
+              <li>Excelência no atendimento às necessidades de restaurantes.</li>
+              <li>Excelência no atendimento às necessidades de empresas de entregadores.</li>
+              </div>
+            </div>
+            <div className='valor card'>
+              <img src={iconValores} alt="" />
+              <div className='texto'>
+                <h1>Nossos Valores</h1>
+                <li>Transparência, eficiência e segurança são os pilares da atuação.</li>
+                <li>Importância de uma gestão financeira clara.</li>
+                <li>Valorização do trabalho dos entregadores.</li>
               </div>
             </div>
           </div>
@@ -104,21 +112,38 @@ function Login() {
           <div className='ODS4'>
           <img src={iconOds04} alt="" className='iconOds04' />
             <h1>ODS 09</h1>
-            <p>A plataforma VEL utiliza tecnologia avançada para inovar na gestão de entregas, melhorando a eficiência das operações e dos processos financeiros.</p>
+            <li>Inovar na gestão de entregas.</li>
+            <li>Melhorar a eficiência das operações.</li>
+            <li>Melhorar os processos financeiros.</li>
           </div>
           <div className='ODS8'>
           <img src={iconOds08} alt="" className='iconOds04' />
             <h1>ODS 08</h1>
-            <p>Nosso objetivo é transformar a gestão de restaurantes com dados úteis para o sucesso do negócio, além de melhorar o ambiente de trabalho dos entregadores, assegurando pagamentos mais seguros.</p>
+            <li>Transformar a gestão com dados úteis.</li>
+            <li>Melhora o trabalho dos entregadores.</li>
+            <li>Pagamentos mais seguros.</li>
           </div>
           <div className='ODS11'>
           <img src={iconOds11} alt="" className='iconOds04' />
             <h1>ODS 11</h1>
-            <p>Contribuiremos para um ambiente de trabalho mais ecológico, substituindo comandas de papel por virtuais, reduzindo a produção e desperdício de papel.</p>
+            <li>Ambiente de trabalho mais ecológico.</li>
+            <li>Substituir comandas de papel por virtuais.</li>
+            <li>Reduzir a produção de papel.</li>
           </div>
         </div>
       </div>
-
+      <div className="visaoFuturo">
+        <img src={telescopio} alt="Icone de um telescopio" />
+        <div>
+          <h2>Visão de Futuro</h2>
+          <p>     
+            Quanto ao futuro do nosso projeto, planejamos desenvolver parcerias estratégicas com restaurantes e empresas de motoboys para expandir nossa base de clientes e a presença da nossa plataforma em toda a região de São Paulo.
+          </p>
+          <p>
+            Também visamos parcerias com educadores financeiros, assim podemos implementar nosso projeto de finanças pessoais completamente gratuito para os entregadores, que são guerreiros e guerreiras que lutam todos os dias para realizar suas entregas.
+          </p>
+        </div>
+      </div>
       <div className="team-section">
         <h1>Nossa Equipe</h1>
         <div className="team-container">

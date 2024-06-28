@@ -1,36 +1,89 @@
+import {React, useState, useEffect} from "react";
 import MenuLateral from "../../components/MenuLateral/MenuLateral";
 import "../../assets/styles/pagamentos.css";
 import capacete from "../../assets/images/Helmet.png"
 import Http from '../../components/RequisicaoHTTP/Http';
+import formatarNumeroBR from "../../components/FormatarNumeroBR/FormatarNumeroBR.jsx";
 
 function App() {
-    const informacoes = async date => {
-        try{
-          const user = localStorage.getItem("User");
-          user.data = date;
-          const requisição = await fetch("<URL AQUI>", Http("POST", user));
-          if(response.status >= 200 || response.status <= 399){
-            const informacoes = await requisição.json();
-            console.log(informacoes);
-          } else {
-              throw new Error(`ERROR ${response.status}`);
-          }
-    
-        } catch(error){
-          console.log(error);
-          return alert("Erro na requisição de dados, tente recarregar a página!")
+    const [listaEntregadores, setListaEntregadores] = useState([]);
+    const [listaFaturamento, setListaFaturamento] = useState([]);
+
+    const fetchEntregadores = async () => {
+        try {
+        const requisicao = await fetch(`https://vel-tnpo.onrender.com/entregador/${JSON.parse(localStorage.getItem("User"))}`);
+        const informacoes = await requisicao.json();
+        setListaEntregadores(informacoes);
+        } catch (error) {
+        console.log("Erro na requisição de dados", error);
+        alert("Erro na requisição de dados, tente recarregar a página!");
         }
+    };
+
+    const fetchFaturamento = async () => {
+        try {
+        const requisicao = await fetch(`https://vel-tnpo.onrender.com/faturamento/${JSON.parse(localStorage.getItem("User"))}`);
+        const informacoes = await requisicao.json();
+        setListaFaturamento(informacoes);
+        } catch (error) {
+        console.log("Erro na requisição de dados", error);
+        alert("Erro na requisição de dados, tente recarregar a página!");
+        }
+    };
+
+    useEffect(() => {
+        fetchEntregadores();
+        fetchFaturamento();
+    }, []);
+
+    const faturamento = (escolha) => {
+        const date = new Date();
+    
+        if(escolha == 0){
+            const todayDate = date.getDate();
+            const valorTotal = listaFaturamento.reduce((acumulador, item) => {
+            if(item.data.slice(8,10) == todayDate) acumulador += item.ganho;
+            return acumulador;
+            }, 0);
+            return valorTotal;
+        } else if(escolha == 1){
+            const todayMonth = date.getMonth();
+            const valorTotal = listaFaturamento.reduce((acumulador, item) => {
+            if(item.data.slice(5,7) == todayMonth + 1) acumulador += item.ganho;
+            return acumulador;
+            }, 0);
+            return valorTotal;
+        } else if(escolha == 2){
+            const valorTotal = listaFaturamento.reduce((acumulador, item) => {
+            if(item.despesa) acumulador += item.despesa;
+            return acumulador;
+            }, 0);
+            return valorTotal;
+        } else if (escolha == 3) {
+            const oneDay = 24 * 60 * 60 * 1000;
+            const today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+            const firstDayOfWeek = new Date(today.setDate(today.getDate() - today.getDay() + 1));
+            const lastDayOfWeek = new Date(today.setDate(today.getDate() - today.getDay() + 7));
+        
+            const valorTotal = listaFaturamento.reduce((acumulador, item) => {
+            const itemDate = new Date(item.data);
+            if (itemDate >= firstDayOfWeek && itemDate <= lastDayOfWeek) acumulador += item.ganho;
+            return acumulador;
+            }, 0);
+        
+            return valorTotal;
+        }  
     }
 
     const Header = ({titulo}) => {
         return <h1>{titulo}</h1>;
     }
 
-    const Bloco = ({titulo, valor}) => {
+    const Bloco = ({titulo, valor, escolha}) => {
         return (
             <div>
                 <h2>{titulo}</h2>
-                <p>R$ {valor},00</p>
+                <p>R$ {formatarNumeroBR(faturamento(escolha))}</p>
             </div>
         );
     };
@@ -55,7 +108,7 @@ function App() {
                 <span style={{cursor: "pointer"}} className="Nome" onClick={exibirInfo}>{nome}</span>
                 <span className="Id">{id}</span>
                 <span className="DataPag">{dataPag}</span>
-                <span className="Valor">R$ {valor},00</span>
+                <span className="Valor">R$ {formatarNumeroBR(valor)}</span>
             </li>
         );
     }
@@ -73,6 +126,12 @@ function App() {
         );    
     }
 
+    const date = new Date();
+    const year = date. getFullYear();
+    const month = String(date. getMonth() + 1).padStart(2, '0');
+    const formattedDate = `${year}-${month}`;
+
+    console.log(listaEntregadores)
     return (
         <>
         <div id="cardBackground" className="ativado"></div>
@@ -93,13 +152,13 @@ function App() {
             <section>
                 <Header titulo="Pagamentos" />
                 <div id="itens">
-                    <Bloco titulo="Faturamento Diário" valor="1.230" />
-                    <Bloco titulo="Faturamento Semanal" valor="4.125" />
-                    <Bloco titulo="Faturamento Mensal" valor="12.000" />
+                    <Bloco titulo="Faturamento Diário" valor={1230} escolha={0} />
+                    <Bloco titulo="Faturamento Semanal" valor={4125} escolha={3} />
+                    <Bloco titulo="Faturamento Mensal" valor={12000} escolha={1} />
                 </div>
                 <div id="tabela">
                     <header>
-                        <input type="month" name="Data" id="IData" />
+                        <input type="month" value={formattedDate} name="Data" id="IData" />
                     </header>
                     <main>
                         <header>

@@ -65,7 +65,7 @@ function PaginaInicial() {
       <div className='Frase'>
        <h1>SAY GOODBYE TO PAPER ORDERS!</h1>
 
-       <p>With Virtual Easy Log, you digitize your orders and eliminate the need for printing. This means less paper, lower costs, and a more sustainable environment.</p>
+       <p>With VEL, you digitize your orders and eliminate the need for printing. This means less paper, lower costs, and a more sustainable environment.</p>
       </div>
 
       <div className="solution-description">
@@ -119,7 +119,7 @@ function PaginaInicial() {
 
       <div id='avaliacoes'>
        <div className="avaliacao">
-        <p>"I love it! Now I can organize my deliveries and couriers in a much more organized way using the Virtual Easy Log platform! I have no regrets at all about signing the contract."</p>
+        <p>"I love it! Now I can organize my deliveries and couriers in a much more organized way using the VEL platform! I have no regrets at all about signing the contract."</p>
         <div>
          <img src={ProfileImg} alt="Profile Image" />
          <div>

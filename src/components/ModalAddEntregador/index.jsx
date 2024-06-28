@@ -1,9 +1,42 @@
 import React from 'react';
 import style from './estilo.module.css';
-
+import Http from "../RequisicaoHTTP/Http";
 export default function ModalAddEntregador({ isOpen, onClose }) {
         // Se o modal não está aberto, retorna null 
     if (!isOpen) return null;
+
+    const enviarDados = event => {
+        event.preventDefault();
+
+        const newUser = {
+            idCnpj: JSON.parse(localStorage.getItem("User")),
+            nome: document.querySelector("#nome").value,
+            idCpf: document.querySelector("#cpf").value,
+            telefone: document.querySelector("#telefone").value,
+            email: document.querySelector("#email").value,
+            contaBancaria: document.querySelector("#contaBancaria").value,
+            turno: document.querySelector("#turno").value,
+        }
+
+        enviaEntregadores(Http("POST", newUser));
+    }
+
+    const enviaEntregadores = async (dados) => {
+        try {
+            const requisicao = await fetch("https://vel-tnpo.onrender.com/entregador/adicionar", dados);
+            if(requisicao.status > 199 && requisicao.status < 399){
+                const resposta = requisicao.json();
+                alert("Usuário cadastrado com sucesso!")
+            } else{
+                throw new Error(requisicao.status);
+            }
+            console.log(resposta, requisicao);
+            alert("Entregador cadastrado com sucesso!")
+        } catch (error) {
+            console.log(error);
+            alert("Erro ao cadastrar usuário.");
+        }
+    };
 
     return (
         <div className={style.modalBackdrop}>
@@ -14,7 +47,7 @@ export default function ModalAddEntregador({ isOpen, onClose }) {
 
                 <h2 className={style.modalPerfilTitulo}>CADASTRAR ENTREGADOR</h2>
 
-                <form className={style.modalForm}>
+                <form className={style.modalForm} onSubmit={enviarDados}>
                     <div className={style.modalImagemContainer}>
                         <label htmlFor='fotoPerfil'>📸</label>
                         <input type="file" id='fotoPerfil' />
@@ -24,20 +57,23 @@ export default function ModalAddEntregador({ isOpen, onClose }) {
 
                         <div className={style.modalFormGrupo}>
                             <label htmlFor='nome'>Nome:</label>
-                            <input type="text" id='nome' />
+                            <input required type="text" id='nome' />
                             <label htmlFor='cpf'>CPF:</label>
-                            <input type="text" id='cpf' />
+                            <input required type="text" id='cpf' />
                             <label htmlFor='telefone'>Telefone:</label>
-                            <input type="tel" id='telefone' />
+                            <input required type="tel" id='telefone' />
                         </div>
                         <div className={style.modalFormGrupo}>
                             <label htmlFor='email'>E-mail:</label>
-                            <input type="email" id='email' />
+                            <input required type="email" id='email' />
                             <label htmlFor='contaBancaria'>Conta Bancária:</label>
-                            <input type="text" id='contaBancaria' />
+                            <input required type="text" id='contaBancaria' />
                             <label htmlFor='turno'>Turno:</label>
-                            <input type="text" id='turno' />
-
+                            <select name="turno" id="turno">
+                                <option value="1">Manhã</option>
+                                <option value="2">Tarde</option>
+                                <option value="3">Noite</option>
+                            </select>
                         </div>
                     </div>
                     <div className={style.modalBotoes}>

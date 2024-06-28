@@ -1,82 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import style from './estilo.module.css';
 import iconePerfil from '../../assets/images/icons/ShareIcon.png';
 import ModalAddEntregador from '../ModalAddEntregador/index';
 import ModalPerfilEntregador from '../ModalPerfilEntregador/index';
-
-const entregadores = [
-    {
-        id: '#0030',
-        nome: 'Marcos Reynald',
-        status: 'Offline',
-        CPF: '123.456.789-01',
-        telefone: '(11) 91234-5678',
-        email: 'marcos.reynald@gmail.com',
-        contaBancaria: '56789-0',
-        turno: 'Manhã'
-    },
-    {
-        id: '#0031',
-        nome: 'Patrick London',
-        status: 'Online',
-        CPF: '234.567.890-12',
-        telefone: '(11) 92345-6789',
-        email: 'patrick.london@gmail.com',
-        contaBancaria: '67890-1',
-        turno: 'Tarde'
-    },
-    {
-        id: '#0032',
-        nome: 'Antônio Carlos',
-        status: 'Offline',
-        CPF: '345.678.901-23',
-        telefone: '(11) 93456-7890',
-        email: 'antonio.carlos@gmail.com',
-        contaBancaria: '78901-2',
-        turno: 'Noite'
-    },
-    {
-        id: '#0033',
-        nome: 'César Casmurro',
-        status: 'Offline',
-        CPF: '456.789.012-34',
-        telefone: '(11) 94567-8901',
-        email: 'cesar.casmurro@gmail.com',
-        contaBancaria: '89012-3',
-        turno: 'Manhã'
-    },
-    {
-        id: '#0034',
-        nome: 'Manuel Clayton',
-        status: 'Online',
-        CPF: '567.890.123-45',
-        telefone: '(11) 95678-9012',
-        email: 'manuel.clayton@gmail.com',
-        contaBancaria: '90123-4',
-        turno: 'Tarde'
-    },
-    {
-        id: '#0035',
-        nome: 'Rafael Ravi',
-        status: 'Online',
-        CPF: '678.901.234-56',
-        telefone: '(11) 96789-0123',
-        email: 'rafael.ravi@gmail.com',
-        contaBancaria: '01234-5',
-        turno: 'Noite'
-    },
-    {
-        id: '#0036',
-        nome: 'Amélia Rodrigues',
-        status: 'Online',
-        CPF: '789.012.345-67',
-        telefone: '(11) 97890-1234',
-        email: 'amelia.rodrigues@gmail.com',
-        contaBancaria: '12345-6',
-        turno: 'Manhã'
-    }
-];
-
 
 export default function TabelaEntregador() {
     // Estado para controlar se o modal de adicionar/perfil entregador está aberto ou fechado
@@ -92,6 +18,25 @@ export default function TabelaEntregador() {
         setSelectedEntregador(entregador); // Define o entregador selecionado para visualização ou edição
         setIsModalPerfilOpen(prevState => !prevState); // Inverte o estado atual do modal de perfil de entregador 
     }
+
+    const [listaEntregadores, setListaEntregadores] = useState([]);
+
+    const fetchEntregadores = async () => {
+        try {
+        const requisicao = await fetch(`https://vel-tnpo.onrender.com/entregador/${JSON.parse(localStorage.getItem("User"))}`);
+        const informacoes = await requisicao.json();
+        setListaEntregadores(informacoes);
+        } catch (error) {
+        console.log("Erro na requisição de dados", error);
+        alert("Erro na requisição de dados, tente recarregar a página!");
+        }
+    };
+    
+    useEffect(() => {
+        fetchEntregadores();
+    }, []);
+
+    console.log(listaEntregadores)
 
     return (
         <div className={style.conteiner}>
@@ -112,13 +57,13 @@ export default function TabelaEntregador() {
                     </tr>
                 </thead>
                 <tbody>
-                    {entregadores.map((entregador) => (
-                        <tr key={entregador.id}>
+                    {listaEntregadores.map((entregador) => (
+                        <tr key={entregador.idCpf}>
                             <td>{entregador.nome}</td>
-                            <td>{entregador.id}</td>
-                            <td className={`${style.status} ${entregador.status === 'Online' ? style.online : style.offline}`}>
+                            <td>{entregador.idCpf}</td>
+                            <td className={`${style.status} ${entregador.status ? style.online : style.offline}`}>
                                 <div className={style.statusCor} />
-                                {entregador.status}
+                                {`${entregador.status ? "Online" : "Offline"}`}
                             </td>
                             <td>
                                 <button className={style.botaoPerfil} onClick={() => handleModalPerfil(entregador)}>

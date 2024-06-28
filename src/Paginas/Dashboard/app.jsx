@@ -7,11 +7,11 @@ import MoneyIcon from "../../assets/images/Money.png";
 import CapaceteIcon from "../../assets/images/Capacete.png";
 import Metas from "../../components/Graficos/Metas";
 import Http from '../../components/RequisicaoHTTP/Http';
+import formatarNumeroBR from "../../components/FormatarNumeroBR/FormatarNumeroBR.jsx";
 
 function App() {
   const [listaEntregadores, setListaEntregadores] = useState([]);
   const [listaFaturamento, setListaFaturamento] = useState([]);
-  // const [listaMetas, setlistaMetas] = useState([]);
 
   const fetchEntregadores = async () => {
     try {
@@ -35,54 +35,55 @@ function App() {
     }
   };
 
-  // const fetchMetas = async () => {
-  //   try {
-  //     const requisicao = await fetch("http://localhost:3000/metas/");
-  //     const informacoes = await requisicao.json();
-  //     setlistaMetas(informacoes[0].metas);
-  //   } catch (error) {
-  //     console.log("Erro na requisição de dados", error);
-  //     alert("Erro na requisição de dados, tente recarregar a página!");
-  //   }
-  // };
-
   useEffect(() => {
     fetchEntregadores();
     fetchFaturamento();
-    // fetchMetas();
   }, []);
 
-  const faturamento = (card) => {
+  const faturamento = (escolha) => {
     const date = new Date();
 
-    if(card == 0){
+    if(escolha == 0){
       const todayDate = date.getDate();
       const valorTotal = listaFaturamento.reduce((acumulador, item) => {
         if(item.data.slice(8,10) == todayDate) acumulador += item.ganho;
         return acumulador;
       }, 0);
       return valorTotal;
-    } else if(card == 1){
+    } else if(escolha == 1){
       const todayMonth = date.getMonth();
       const valorTotal = listaFaturamento.reduce((acumulador, item) => {
         if(item.data.slice(5,7) == todayMonth + 1) acumulador += item.ganho;
         return acumulador;
       }, 0);
       return valorTotal;
-    } else if(card == 2){
+    } else if(escolha == 2){
       const valorTotal = listaFaturamento.reduce((acumulador, item) => {
         if(item.despesa) acumulador += item.despesa;
         return acumulador;
       }, 0);
       return valorTotal;
-    }
+    } else if (escolha == 3) {
+      const oneDay = 24 * 60 * 60 * 1000;
+      const today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+      const firstDayOfWeek = new Date(today.setDate(today.getDate() - today.getDay() + 1));
+      const lastDayOfWeek = new Date(today.setDate(today.getDate() - today.getDay() + 7));
+  
+      const valorTotal = listaFaturamento.reduce((acumulador, item) => {
+        const itemDate = new Date(item.data);
+        if (itemDate >= firstDayOfWeek && itemDate <= lastDayOfWeek) acumulador += item.ganho;
+        return acumulador;
+      }, 0);
+  
+      return valorTotal;
+    }  
   }
 
-  const CartaoFaturamento = ({ titulo, divClasse, h2Classe, card }) => {
+  const CartaoFaturamento = ({ titulo, divClasse, h2Classe, escolha }) => {
     return (
       <div className={divClasse}>
         <main>
-          <h2>R$ <span className={h2Classe}>{faturamento(card)}</span></h2>
+          <h2>R$ <span className={h2Classe}>{formatarNumeroBR(faturamento(escolha))}</span></h2>
           <h3>{titulo}</h3>
         </main>
         <aside>
@@ -97,7 +98,7 @@ function App() {
       <div className={divClass}>
         <div className="conteudo">
           <h2>{h2}</h2>
-          <h3>R$ <span>{1000}</span></h3>
+          <h3>R$ <span>{formatarNumeroBR(1000)}</span></h3>
           {grafico}
         </div>
       </div>
@@ -120,7 +121,7 @@ function App() {
       <div className={divClass}>
         <div className="conteudo">
           <h2>{h2}</h2>
-          <h3>R$ <span>{despesa}</span></h3>
+          <h3>R$ <span>{formatarNumeroBR(despesa)}</span></h3>
           <Despesas valorDespesa={despesa} valorGanho={valorTotal}/>
         </div>
       </div>
@@ -144,9 +145,9 @@ function App() {
       <MenuLateral pagina="Dashboard" />
 
       <div className="container">
-        <CartaoFaturamento titulo="Faturamento Diário" divClasse="item FD" h2Classe="valorFD" card="0" />
-        <CartaoFaturamento titulo="Faturamento Mensal" divClasse="item FS" h2Classe="valorFS" card="1" />
-        <CartaoFaturamento titulo="Total a pagar" divClasse="item TP" h2Classe="valorTP" card="2" />
+        <CartaoFaturamento titulo="Faturamento Diário" divClasse="item FD" h2Classe="valorFD" escolha="0" />
+        <CartaoFaturamento titulo="Faturamento Semanal" divClasse="item FS" h2Classe="valorFS" escolha="3" />
+        <CartaoFaturamento titulo="Total a pagar" divClasse="item TP" h2Classe="valorTP" escolha="2" />
 
         <div className="item En">
           <main>

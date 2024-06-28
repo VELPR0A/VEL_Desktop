@@ -65,7 +65,7 @@ function PaginaInicial() {
             <div className='Frase'>
               <h1>DIGA  ADEUS AS COMANDAS DE PAPEL!</h1>
 
-              <p>Com a Virtual Easy Log, você digitaliza seus pedidos e elimina a necessidade <br></br> de impressões. Isso significa menos papel, menos custos e um ambiente<br></br> mais sustentável.</p>
+              <p>Com a VEL, você digitaliza seus pedidos e elimina a necessidade <br></br> de impressões. Isso significa menos papel, menos custos e um ambiente<br></br> mais sustentável.</p>
             </div>
 
             <div className="solution-description">
@@ -119,7 +119,7 @@ function PaginaInicial() {
 
             <div id='avaliacoes'>
               <div className="avaliacao">
-                <p>"Adorei! Agora consigo organizar minhas entregas e entregadores de uma forma muito mais organizada usando a plataforma da Virtual Easy Log! Não me arrependo nem um pouco de ter fechado o contrato."</p>
+                <p>"Adorei! Agora consigo organizar minhas entregas e entregadores de uma forma muito mais organizada usando a plataforma da VEL! Não me arrependo nem um pouco de ter fechado o contrato."</p>
                 <div>
                   <img src={ProfileImg} alt="Imagem de perfil" />
                   <div>

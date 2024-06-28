@@ -15,7 +15,7 @@ export default function ModalPerfilEntregador({ isOpen, onClose, entregador }) {
     useEffect(() => {
         if (entregador) {
             setNomeEntregador(entregador.nome);
-            setCpf(entregador.CPF);
+            setCpf(entregador.idCpf);
             setTelefone(entregador.telefone);
             setEmail(entregador.email);
             setContaBancaria(entregador.contaBancaria);
@@ -115,7 +115,11 @@ export default function ModalPerfilEntregador({ isOpen, onClose, entregador }) {
                                 <label htmlFor='contaBancaria'>Conta Bancária:</label>
                                 <input type="text" value={contaBancaria} onChange={(e) => setContaBancaria(e.target.value)} id='contaBancaria' />
                                 <label htmlFor='turno'>Turno:</label>
-                                <input type="text" value={turno} onChange={(e) => setTurno(e.target.value)} id='turno' />
+                                <select name="turno" value={turno} onChange={(e) => setTurno(e.target.value)} id="turno">
+                                    <option value="1">Manhã</option>
+                                    <option value="2">Tarde</option>
+                                    <option value="3">Noite</option>
+                                </select>
                             </div>
                         </div>
                         <div className={style.modalBotoes}>

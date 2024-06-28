@@ -102,7 +102,7 @@
     font-weight: 600;
 }
 
-.modalFormGrupo input {
+.modalFormGrupo input, select {
     background: #ECF3FB;
     border: none;
     border-radius: 10px;
