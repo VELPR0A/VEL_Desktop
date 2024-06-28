@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import style from './estilo.module.css';
 import iconeAlterar from '../../assets/images/icons/iconeAlterar.svg';
+import Http from "../RequisicaoHTTP/Http.jsx";
 
 export default function ModalPerfilEntregador({ isOpen, onClose, entregador }) {
     // ver ou editar - mudança de estado
@@ -32,6 +33,39 @@ export default function ModalPerfilEntregador({ isOpen, onClose, entregador }) {
     }
 
     if (!isOpen || !entregador) return null;
+
+    const enviarDados = event => {
+        event.preventDefault();
+        console.log("user")
+        const newUser = {
+            idCnpj: JSON.parse(localStorage.getItem("User")),
+            nome: document.querySelector("#nome").value,
+            idCpf: document.querySelector("#cpf").value,
+            telefone: document.querySelector("#telefone").value,
+            email: document.querySelector("#email").value,
+            contaBancaria: document.querySelector("#contaBancaria").value,
+            turno: document.querySelector("#turno").value,
+        }
+
+        enviaEntregadores(Http("PUT", newUser));
+    }
+
+    const enviaEntregadores = async (dados) => {
+        try {
+            const requisicao = await fetch(`https://vel-tnpo.onrender.com/entregador/editar/${document.querySelector("#cpf").value}`, dados);
+            console.log(requisicao);
+            if(requisicao.status > 199 && requisicao.status < 399){
+                console.log(requisicao)
+                alert("Usuário atualizado com sucesso!")
+                alterarEstadoParaVer();
+            } else{
+                throw new Error(requisicao.status);
+            }
+        } catch (error) {
+            console.log(error);
+            alert("Erro ao atualizar usuário.");
+        }
+    };
 
     return (
         <div className={style.modalPerfilBackdrop}>
@@ -94,7 +128,7 @@ export default function ModalPerfilEntregador({ isOpen, onClose, entregador }) {
                         </div>
                     </>
                 ) : (
-                    <form className={style.modalForm}>
+                    <form className={style.modalForm} onSubmit={enviarDados}>
                         <div className={style.modalImagemContainer}>
                             <label htmlFor='fotoPerfil'>✏️</label>
                             <input type="file" id='fotoPerfil' />
@@ -123,8 +157,8 @@ export default function ModalPerfilEntregador({ isOpen, onClose, entregador }) {
                             </div>
                         </div>
                         <div className={style.modalBotoes}>
-                            <button type="button" className={`${style.modalBotaoEnviar} ${style.cancelar}`} onClick={alterarEstadoParaVer}>CANCELAR</button>
-                            <button type="button" className={style.modalBotaoEnviar} onClick={alterarEstadoParaVer}>SALVAR</button>
+                            <button type="button" className={`${style.modalBotaoEnviar} ${style.cancelar}`} onClick={alterarEstadoParaVer}>Cancelar</button>
+                            <input type="submit" value="Enviar" className={style.modalBotaoEnviar} />
                         </div>
                     </form>
                 )}

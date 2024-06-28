@@ -18,20 +18,21 @@ export default function ModalAddEntregador({ isOpen, onClose }) {
             turno: document.querySelector("#turno").value,
         }
 
+        console.log(newUser)
         enviaEntregadores(Http("POST", newUser));
     }
 
     const enviaEntregadores = async (dados) => {
         try {
             const requisicao = await fetch("https://vel-tnpo.onrender.com/entregador/adicionar", dados);
+            console.log(requisicao);
             if(requisicao.status > 199 && requisicao.status < 399){
-                const resposta = requisicao.json();
+                console.log(requisicao)
                 alert("Usuário cadastrado com sucesso!")
             } else{
+                alert("Entregador cadastrado com sucesso!")
                 throw new Error(requisicao.status);
             }
-            console.log(resposta, requisicao);
-            alert("Entregador cadastrado com sucesso!")
         } catch (error) {
             console.log(error);
             alert("Erro ao cadastrar usuário.");
@@ -59,7 +60,7 @@ export default function ModalAddEntregador({ isOpen, onClose }) {
                             <label htmlFor='nome'>Nome:</label>
                             <input required type="text" id='nome' />
                             <label htmlFor='cpf'>CPF:</label>
-                            <input required type="text" id='cpf' />
+                            <input required type="text" minLength={11} maxLength={14} id='cpf' />
                             <label htmlFor='telefone'>Telefone:</label>
                             <input required type="tel" id='telefone' />
                         </div>
