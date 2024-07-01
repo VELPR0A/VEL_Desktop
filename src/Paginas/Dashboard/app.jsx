@@ -72,11 +72,10 @@ function App() {
     
       const valorTotal = listaFaturamento.reduce((acumulador, item) => {
         const itemDate = new Date(item.data);
-        console.log(firstDayOfWeek, lastDayOfWeek, itemDate);
         if (itemDate >= firstDayOfWeek && itemDate <= lastDayOfWeek) acumulador += item.ganho;
         return acumulador;
       }, 0);
-      console.log(valorTotal);
+
       return valorTotal;
     }    
   }
@@ -108,17 +107,17 @@ function App() {
   };
 
   const GraficoConteudo2 = ({ divClass, h2}) => {
-    let despesa = listaFaturamento.map(item => item.despesa);
-    despesa = despesa.reduce((acumulador, valor) => {
-      if(valor) acumulador += valor;
-      return acumulador; 
-    }, 0);
     const date = new Date();
     const todayMonth = date.getMonth();
+    const despesa = listaFaturamento.reduce((acumulador, item) => {
+      if(item.data.slice(5,7) == todayMonth + 1) acumulador += item.despesa;
+      return acumulador;
+    }, 0);
     const valorTotal = listaFaturamento.reduce((acumulador, item) => {
       if(item.data.slice(5,7) == todayMonth + 1) acumulador += item.ganho;
       return acumulador;
     }, 0);
+
     return (
       <div className={divClass}>
         <div className="conteudo">
@@ -163,7 +162,7 @@ function App() {
         </div>
 
         <GraficoConteudo1 divClass="item Graf1" h2="Metas" grafico={<FaturamentoMensal />} />
-        <GraficoConteudo2 divClass="item Graf2" h2="Gastos e Ganhos Mensais" />
+        <GraficoConteudo2 divClass="item Graf2" h2="Despesa Mensal:" />
 
         <div className="item Graf3">
           <Metas valores={listaFaturamento} />
