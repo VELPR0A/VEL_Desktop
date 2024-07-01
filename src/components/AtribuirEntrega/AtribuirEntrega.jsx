@@ -34,11 +34,12 @@ export default function AtribuirEntrega() {
   const style = {
     display: "flex",
     backgroundColor: "#ECF3FB",
+    overflowY: "hidden !important",
   };
 
   return (
     <Container style={style}>
-      <MenuLateral pagina="Coordenadores" />
+      <MenuLateral pagina="Coordenadores"/>
       <section className="container1">
         <div className="titulo">
           <h1>Atribuir Entrega</h1>

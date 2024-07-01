@@ -64,19 +64,21 @@ function App() {
       }, 0);
       return valorTotal;
     } else if (escolha == 3) {
-      const oneDay = 24 * 60 * 60 * 1000;
-      const today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
-      const firstDayOfWeek = new Date(today.setDate(today.getDate() - today.getDay() + 1));
-      const lastDayOfWeek = new Date(today.setDate(today.getDate() - today.getDay() + 7));
-  
+      const today = new Date();
+      // Setando o primeiro dia da semana (domingo)
+      const firstDayOfWeek = new Date(today.setDate(today.getDate() - today.getDay()));
+      // Setando o último dia da semana (sábado)
+      const lastDayOfWeek = new Date(today.setDate(today.getDate() - today.getDay() + 6));
+    
       const valorTotal = listaFaturamento.reduce((acumulador, item) => {
         const itemDate = new Date(item.data);
+        console.log(firstDayOfWeek, lastDayOfWeek, itemDate);
         if (itemDate >= firstDayOfWeek && itemDate <= lastDayOfWeek) acumulador += item.ganho;
         return acumulador;
       }, 0);
-  
+      console.log(valorTotal);
       return valorTotal;
-    }  
+    }    
   }
 
   const CartaoFaturamento = ({ titulo, divClasse, h2Classe, escolha }) => {

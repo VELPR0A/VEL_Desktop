@@ -8,6 +8,7 @@ import GlobalStyle from "../../components/globalStyles";
 function App() {
   const [listaEntregadores, setListaEntregadores] = useState([]);
   const [listaFaturamento, setListaFaturamento] = useState([]);
+  const [dataSelecionada, setDataSelecionada] = useState('');
 
   const fetchEntregadores = async () => {
     try {
@@ -68,17 +69,12 @@ function App() {
       }, 0);
       return valorTotal;
     } else if (escolha == 3) {
-      const oneDay = 24 * 60 * 60 * 1000;
-      const today = new Date(
-        date.getFullYear(),
-        date.getMonth(),
-        date.getDate()
-      );
+      const today = new Date();
       const firstDayOfWeek = new Date(
-        today.setDate(today.getDate() - today.getDay() + 1)
+        today.setDate(today.getDate() - today.getDay())
       );
       const lastDayOfWeek = new Date(
-        today.setDate(today.getDate() - today.getDay() + 7)
+        today.setDate(today.getDate() - today.getDay() + 6)
       );
 
       const valorTotal = listaFaturamento.reduce((acumulador, item) => {
@@ -155,7 +151,30 @@ function App() {
   const month = String(date.getMonth() + 1).padStart(2, "0");
   const formattedDate = `${year}-${month}`;
 
-  console.log(listaEntregadores);
+  const listaDeUsuarios = () =>
+    listaFaturamento.map((faturamento) => {
+      const data = [
+        faturamento.data.slice(-2),
+        faturamento.data.slice(5, 7),
+        faturamento.data.slice(0, 4),
+      ];
+      if (
+        faturamento.entregador &&
+        dataSelecionada == `${data[2]}-${data[1]}`
+      ) {
+        return (
+          <Registro
+            key={faturamento.entregador.idCpf}
+            nome={faturamento.entregador.nome}
+            id={`#${faturamento.entregador.idCpf}`}
+            dataPag={`${data[0]}/${data[1]}/${data[2]}`}
+            valor={faturamento.ganho}
+          />
+        );
+      } else {
+        return null;
+      }
+    });
 
   const style = {
     display: "flex",
@@ -204,7 +223,13 @@ function App() {
         </div>
         <div id="tabela">
           <header>
-            <input type="month" defaultValue={formattedDate} name="Data" id="IData" />
+            <input
+              type="month"
+              defaultValue={formattedDate}
+              onInput={(e) => setDataSelecionada(e.target.value)}
+              name="Data"
+              id="IData"
+            />
           </header>
           <main>
             <header>
@@ -213,20 +238,7 @@ function App() {
               <h3 className="DataPag">Data de Pagamento</h3>
               <h3 className="Valor">Valor</h3>
             </header>
-            <ul>
-              <Registro
-                nome="Jefferoson Souza Silva"
-                id="#0001"
-                dataPag="20/04/2024"
-                valor="530"
-              />
-              <Registro
-                nome="Antônio Carlos"
-                id="#0002"
-                dataPag="22/04/2024"
-                valor="700"
-              />
-            </ul>
+            <ul>{listaDeUsuarios()}</ul>
           </main>
         </div>
       </section>

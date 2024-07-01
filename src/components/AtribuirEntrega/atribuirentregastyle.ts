@@ -5,10 +5,11 @@ export const Container = styled.div.attrs({ className: "container" })`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
     flex-wrap: wrap;
     width: 83vw;
     width: -webkit-fill-available !important;
-    min-height: 100vh;
+    height: 100vh;
   }
 
   .titulo {
@@ -18,9 +19,8 @@ export const Container = styled.div.attrs({ className: "container" })`
     background-color: #005A8D;
     color: #fff;
     width: 80%;
-    height: 5em;
     border-radius: 15px;
-    margin: 2em 0 1em 0;
+    padding: 15px;
     font-size: 1.3em;
     box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.25);
   }
@@ -200,5 +200,11 @@ export const Container = styled.div.attrs({ className: "container" })`
     flex-direction: row;
     justify-content: center;
     align-items: center;
+  }
+
+  @media screen and (max-width: 1160px){
+    .Conteudo{
+      
+    }
   }
 `;
