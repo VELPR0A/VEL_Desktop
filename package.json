@@ -1,5 +1,4 @@
 {
-  "homepage": "https://VELPR0A.github.io/VEL_Desktop",
   "name": "ambiente",
   "private": true,
   "version": "0.0.0",
@@ -9,8 +8,7 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "predeploy": "npm run build"
   },
   "dependencies": {
     "highcharts-react-official": "^3.2.1",
