@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import MenuLateral from "../../components/MenuLateral/MenuLateral";
-import "../../assets/styles/dashbord.css";
 import Despesas from "../../components/Graficos/Despesas";
 import FaturamentoMensal from "../../components/Graficos/FaturamentoMensal";
 import MoneyIcon from "../../assets/images/Money.png";
 import CapaceteIcon from "../../assets/images/Capacete.png";
 import Metas from "../../components/Graficos/Metas";
-import Http from '../../components/RequisicaoHTTP/Http';
 import formatarNumeroBR from "../../components/FormatarNumeroBR/FormatarNumeroBR.jsx";
+import { Container } from "./dashboard.ts";
+import GlobalStyle from "../../components/globalStyles";
 
 function App() {
   const [listaEntregadores, setListaEntregadores] = useState([]);
@@ -105,7 +105,7 @@ function App() {
     );
   };
 
-  const GraficoConteudo2 = ({ divClass, h2, grafico}) => {
+  const GraficoConteudo2 = ({ divClass, h2}) => {
     let despesa = listaFaturamento.map(item => item.despesa);
     despesa = despesa.reduce((acumulador, valor) => {
       if(valor) acumulador += valor;
@@ -141,10 +141,11 @@ function App() {
   };
 
   return (
-    <>
+    <Container style={{display: "flex"}}>
+      <GlobalStyle />
       <MenuLateral pagina="Dashboard" />
 
-      <div className="container">
+      <div className="container1">
         <CartaoFaturamento titulo="Faturamento Diário" divClasse="item FD" h2Classe="valorFD" escolha="0" />
         <CartaoFaturamento titulo="Faturamento Semanal" divClasse="item FS" h2Classe="valorFS" escolha="3" />
         <CartaoFaturamento titulo="Total a pagar" divClasse="item TP" h2Classe="valorTP" escolha="2" />
@@ -160,7 +161,7 @@ function App() {
         </div>
 
         <GraficoConteudo1 divClass="item Graf1" h2="Metas" grafico={<FaturamentoMensal />} />
-        <GraficoConteudo2 divClass="item Graf2" h2="Despesas" />
+        <GraficoConteudo2 divClass="item Graf2" h2="Gastos e Ganhos Mensais" />
 
         <div className="item Graf3">
           <Metas valores={listaFaturamento} />
@@ -179,7 +180,7 @@ function App() {
           </footer>
         </div>
       </div>
-    </>
+    </ Container>
   );
 }
 

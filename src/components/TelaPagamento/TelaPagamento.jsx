@@ -1,4 +1,3 @@
-import "../../assets/styles/TelaPagamento.css";
 import { FaCreditCard, FaPaypal, FaPix } from "react-icons/fa6";
 import { FaCheckCircle, FaCheck } from "react-icons/fa";
 import { CiDiscount1 } from "react-icons/ci";
@@ -44,7 +43,7 @@ export default function TelaPagamento({valorPlano}){
     }
 
     return(
-        <>
+        <div className="container">
             <nav>
                 <img src={LogoVEL} alt="Logo da empresa" />
             </nav>
@@ -120,6 +119,6 @@ export default function TelaPagamento({valorPlano}){
                     </div>
                 </aside>
             </main>
-        </>
+        </ div>
     );
 } 

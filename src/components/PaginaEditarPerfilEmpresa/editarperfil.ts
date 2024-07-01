@@ -1,0 +1,132 @@
+import styled from "styled-components";
+export const Container = styled.div.attrs({ className: "container" })`
+
+  .Container {
+    display: flex;
+    width: 100vw;
+    min-height: 100vh;
+  }
+
+  .ImagemPerfilEmpresa {
+    display: flex;
+    justify-content: center;
+  }
+
+  .ImagemPerfilEmpresa img {
+    width: 12em;
+    position: absolute;
+    top: 6%;
+  }
+
+  .Quadro {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    width: 100%;
+    padding: 7em 3em;
+    margin-top: 8em;
+  }
+
+  .Quadro .NomeEmpresa {
+    font-size: 1.1em;
+    display: flex;
+    justify-content: center;
+    color: #222222;
+  }
+
+  .Quadro .Label {
+    font-size: 0.9em;
+    color: #222222;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.5);
+    margin-bottom: 1em;
+  }
+
+  .Label p {
+    font-size: 1.7em;
+    color: #9e9e9e;
+  }
+
+  .BotaoEditar {
+    display: flex;
+    justify-content: end;
+  }
+
+  .Colunas {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .Coluna1,
+  .Coluna2 {
+    width: 45%;
+  }
+
+  .Proprietario,
+  .Telefone,
+  .Email {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Titulo-Form {
+    font-size: 1.4em;
+    color: #222222;
+    font-weight: bold;
+  }
+
+  input {
+    background-color: #ECF3FB;
+    border: none;
+    border-radius: 10px;
+    height: 40px;
+    padding-left: 1em;
+    margin-bottom: 1em;
+  }
+
+  .FormadePagamento {
+    margin-bottom: 1em;
+  }
+
+  .FormadePagamento h2 {
+    font-size: 1.4em;
+    color: #222222;
+  }
+
+  select {
+    border: none;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.5);
+    font-size: 1.4em;
+    width: 100%;
+    color: #222222;
+  }
+  .Botao {
+    display: flex;
+    justify-content: end;
+  }
+
+  .Botao a {
+    text-decoration: none;
+  }
+
+  .Botao-Salvar {
+    width: 200px;
+    border: 2px solid #005A8D;
+    border-radius: 10px;
+    transition: all 0.3s;
+    cursor: pointer;
+    background: white;
+    font-size: 1.2em;
+    font-weight: 700;
+    padding: 0.1em;
+    color: #005A8D;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Botao-Salvar:hover {
+    background: #005A8D;
+    color: white;
+  }
+`;
