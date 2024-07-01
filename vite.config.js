@@ -5,5 +5,6 @@ import { reactScopedCssPlugin } from 'rollup-plugin-react-scoped-css'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), reactScopedCssPlugin()]
+  plugins: [react(), reactScopedCssPlugin()],
+  base: "/VEL_Desktop"
 })
