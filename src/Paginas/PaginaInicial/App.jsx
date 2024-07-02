@@ -114,12 +114,12 @@ function PaginaInicial() {
               <h2>
                 A Solução Completa para{" "}
                 <span className="highlight">Restaurantes</span> e <br></br>{" "}
-                <span className="highlight">Empresas de Motoboys</span>
+                <span className="highlight">Empresas de entregas rápidas</span>
               </h2>
               <p>
                 Diga adeus às complicações da gestão de entregas e adote uma
                 plataforma que transforma a relação entre restaurantes, empresas
-                de motoboys e seus entregadores. Desenvolvida para proporcionar
+                de entregas rápidas e seus entregadores. Desenvolvida para proporcionar
                 eficiência, transparência e segurança, nossa solução digital
                 oferece uma visão integrada de todo o seu fluxo de trabalho e
                 finanças, tudo em um só lugar.

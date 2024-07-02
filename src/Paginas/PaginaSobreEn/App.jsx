@@ -132,7 +132,7 @@ function Login() {
           <div>
             <h2>Future Vision</h2>
             <p>
-              Regarding the future of our project, we plan to develop strategic partnerships with restaurants and delivery companies to expand our customer base and the presence of our platform throughout the São Paulo region.
+              Regarding the future of our project, we plan to develop strategic partnerships with restaurants and delivery companies to expand our customer base and the presence of our platform throughout the national and international territory region.
             </p>
             <p>
               We also aim for partnerships with financial educators, so we can implement our completely free personal finance project for couriers, who are warriors fighting every day to make their deliveries.

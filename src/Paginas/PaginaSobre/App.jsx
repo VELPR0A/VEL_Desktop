@@ -131,7 +131,7 @@ function Login() {
           <div>
             <h2>Visão de Futuro</h2>
             <p>     
-              Quanto ao futuro do nosso projeto, planejamos desenvolver parcerias estratégicas com restaurantes e empresas de motoboys para expandir nossa base de clientes e a presença da nossa plataforma em toda a região de São Paulo.
+              Quanto ao futuro do nosso projeto, planejamos desenvolver parcerias estratégicas com restaurantes e empresas de entregas rápidas para expandir nossa base de clientes e a presença da nossa plataforma em toda a região de território nacional e internacional.
             </p>
             <p>
               Também visamos parcerias com educadores financeiros, assim podemos implementar nosso projeto de finanças pessoais completamente gratuito para os entregadores, que são guerreiros e guerreiras que lutam todos os dias para realizar suas entregas.
