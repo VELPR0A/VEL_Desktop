@@ -1,4 +1,4 @@
-# Virtual Easy Log
+# VEL
 
 ## Entrando no projeto pela primeira vez? Confira o passo a passo:
 
